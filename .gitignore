@@ -1,0 +1,20 @@
+# raw generation media (large, regenerable)
+review/
+scratch-frames/
+ChatGPT Image car
+10k-websites-skill.zip
+
+# local tooling state
+.remember/
+
+# node / next
+node_modules/
+.next/
+out/
+.env*.local
+*.tsbuildinfo
+next-env.d.ts
+
+# test output
+test-results/
+playwright-report/

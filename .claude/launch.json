@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "khabir-site",
+      "runtimeExecutable": "npx.cmd",
+      "runtimeArgs": ["-y", "http-server", "khabir-diagnostic-auto-pro", "-p", "8080", "-c-1", "--silent"],
+      "port": 8080
+    }
+  ]
+}
