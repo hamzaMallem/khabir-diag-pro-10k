@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Khabir Diagnostic Auto Pro (Next.js)
 
-## Getting Started
+Website for a specialist electronic-diagnostics workshop for German cars in Beni Mellal. Next.js 16 (App Router), TypeScript, CSS Modules. Three languages (`/fr` default, `/ar` right-to-left, `/en`) and a hero video that plays as you scroll (separate 16:9 desktop and 9:16 mobile videos).
 
-First, run the development server:
+New to Next.js? Start with [`../docs/beginner-maintenance-guide.md`](../docs/beginner-maintenance-guide.md). Plan and decisions: [`../docs/nextjs-rebuild-plan.md`](../docs/nextjs-rebuild-plan.md).
 
+## Run it
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev          # development: http://localhost:3000
+npm run build && npm run start -- -p 3001   # production preview
+npx playwright install chromium             # once, for the tests
+npx playwright test                         # needs the production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configure (see `.env.example`)
+| Variable | Purpose |
+|---|---|
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | digits only, e.g. `2126XXXXXXXX`. While empty, contact buttons scroll to the contact section and show "to be added" |
+| `NEXT_PUBLIC_SITE_URL` | public URL, used for canonical links, hreflang, sitemap |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Address and opening hours: `config/site.ts`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Where to edit
+Texts `messages/*.json` · colors `styles/globals.css` · videos, caption timing, scroll length `config/hero.ts` · section order `app/[locale]/page.tsx`. Full table in the maintenance guide.
 
-## Learn More
+## Replace a video
+Encode with `../tools/media/encode.sh` (H.264, a keyframe on every frame, no audio). Put the files in `public/media/`, update that video's entry in `config/hero.ts`, re-time its captions. The two videos are configured independently.
 
-To learn more about Next.js, take a look at the following resources:
+## Why this animation approach
+Native scrolling plus one `requestAnimationFrame` loop that seeks the video; no animation library. It stops when the hero is offscreen, the tab is hidden or the motion has settled. Only the video that matches the screen is downloaded. All-intra encoding is what makes backward and forward seeking smooth (the originals had 3 keyframes in 15 s). Sizes: desktop 7.1 MB, mobile 6.1 MB.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tested
+`npx playwright test` (30 tests): redirects and cookie, RTL, metadata, translation key parity, scrub accuracy at 0/25/50/75/100% in both directions on both videos, one video per screen, source swap on resize, failed video fallback, reduced motion, loop idles, no overflow or console errors in 3 languages x 4 viewports, demo (mouse and keyboard), FAQ, skip link.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Known limits
+- **The current videos are placeholders:** "Dola AI" watermark, and the mobile clip shows a Maserati badge. Replace before launch.
+- Not measured: Lighthouse scores, real iPhone/Android seeking (desktop emulation is not proof).
+- Missing business data: WhatsApp number, address, opening hours, real site URL, real workshop photos.

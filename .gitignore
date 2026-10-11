@@ -23,3 +23,6 @@ playwright-report/
 graphify-out/cache/
 graphify-out/.graphify_*
 graphify-out/cost.json
+
+# third-party engine binary installed by `impeccable install` (re-run the installer to get it)
+.claude/skills/impeccable/scripts/bin/
