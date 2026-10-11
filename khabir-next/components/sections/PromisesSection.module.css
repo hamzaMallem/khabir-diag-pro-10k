@@ -1,0 +1,91 @@
+.grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(40px, 6vw, 110px);
+}
+
+.side {
+  position: sticky;
+  top: 120px;
+  align-self: start;
+}
+
+.promises h2 {
+  margin-top: 18px;
+  max-width: 11ch;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 22px;
+  align-items: baseline;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.list li:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.n {
+  font-family: var(--mono);
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+
+.list h3 {
+  font-size: clamp(26px, 1.4vw + 16px, 40px);
+  text-transform: uppercase;
+}
+
+:lang(ar) .list h3 {
+  text-transform: none;
+}
+
+.list p {
+  color: var(--text-secondary);
+  margin-top: 8px;
+  max-width: 46ch;
+}
+
+.check {
+  width: 28px;
+  height: 28px;
+  color: var(--ok);
+  align-self: center;
+}
+
+/* ticks draw one after the other */
+.check path {
+  transition-duration: 0.9s;
+  transition-delay: 0.4s;
+}
+
+.list li:nth-child(2) .check path {
+  transition-delay: 0.6s;
+}
+
+.list li:nth-child(3) .check path {
+  transition-delay: 0.8s;
+}
+
+.list li:nth-child(4) .check path {
+  transition-delay: 1s;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .side {
+    position: static;
+  }
+}

@@ -1,0 +1,99 @@
+.grid {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: clamp(32px, 5vw, 90px);
+}
+
+.faq h2 {
+  margin-top: 18px;
+}
+
+.qa {
+  border-bottom: 1px solid var(--line);
+  interpolate-size: allow-keywords; /* lets the answer animate its height (Chrome, Edge, Safari); others open instantly */
+}
+
+.qa:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.qa summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 0;
+  font-family: var(--body);
+  font-weight: 500;
+  font-size: clamp(17px, 0.4vw + 15px, 20px);
+}
+
+.qa summary::-webkit-details-marker {
+  display: none;
+}
+
+/* plus / minus icon */
+.icon {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  position: relative;
+  transition: border-color 0.3s;
+}
+
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 11px;
+  height: 1.5px;
+  background: var(--accent);
+  transform: translate(-50%, -50%);
+}
+
+.icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  transition: transform 0.5s var(--ease-out);
+}
+
+.qa[open] .icon {
+  border-color: var(--accent);
+}
+
+.qa[open] .icon::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.qa::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition:
+    block-size 0.5s var(--ease-out),
+    content-visibility 0.5s allow-discrete;
+}
+
+.qa[open]::details-content {
+  block-size: auto;
+}
+
+.answer {
+  color: var(--text-secondary);
+  padding: 0 48px 26px 0;
+  max-width: 62ch;
+}
+
+[dir="rtl"] .answer {
+  padding: 0 0 26px 48px;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

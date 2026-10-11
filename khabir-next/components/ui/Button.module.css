@@ -1,0 +1,56 @@
+.btn {
+  --h: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: var(--h);
+  padding: 0 26px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: var(--body);
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  text-shadow: none;
+  cursor: pointer;
+  transition:
+    background-color 0.35s var(--ease-out),
+    transform 0.35s var(--ease-out),
+    box-shadow 0.35s var(--ease-out);
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 34px -10px rgba(255, 107, 0, 0.7);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+.small {
+  --h: 42px;
+  padding: 0 18px;
+  font-size: 14.5px;
+}
+
+.large {
+  --h: 60px;
+  font-size: 17px;
+  padding: 0 34px;
+}
+
+@media (pointer: coarse) {
+  .btn {
+    min-height: max(44px, var(--h));
+  }
+}

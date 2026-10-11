@@ -1,0 +1,132 @@
+.nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px var(--gutter);
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.5s var(--ease-out),
+    backdrop-filter 0.5s var(--ease-out),
+    border-color 0.5s;
+}
+
+.solid {
+  background: rgba(14, 21, 24, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-color: var(--line);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand svg {
+  width: 36px;
+  height: 36px;
+  flex: none;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brandName {
+  font-family: var(--font-saira), sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.brandArabic {
+  font-family: var(--font-alexandria), sans-serif;
+  font-size: 17px;
+  letter-spacing: 0;
+  color: var(--accent);
+}
+
+.brandSub {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.langs {
+  display: flex;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.langs a {
+  display: grid;
+  place-items: center;
+  min-width: 38px;
+  min-height: 32px;
+  padding: 0 8px;
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+}
+
+.langs a[lang="ar"] {
+  font-family: var(--font-alexandria), sans-serif;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.langs a[aria-current="true"] {
+  background: var(--panel-2);
+  color: var(--text-primary);
+}
+
+.langs a:hover {
+  color: var(--text-primary);
+}
+
+@media (pointer: coarse) {
+  .langs a {
+    min-height: 40px;
+    min-width: 40px;
+  }
+}
+
+@media (max-width: 560px) {
+  .brandSub {
+    display: none;
+  }
+  .cta {
+    display: none;
+  }
+  .brand svg {
+    width: 32px;
+    height: 32px;
+  }
+}

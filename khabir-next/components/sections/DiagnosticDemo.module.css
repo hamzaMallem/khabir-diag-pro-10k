@@ -1,0 +1,328 @@
+.lab {
+  background: linear-gradient(180deg, transparent, rgba(22, 33, 38, 0.55) 30%, rgba(22, 33, 38, 0.55) 70%, transparent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+}
+
+.lab h2 {
+  margin: 18px 0;
+}
+
+.intro {
+  margin-bottom: 0;
+}
+
+/* picture with the moving scan line and the fault marker */
+.figure {
+  position: relative;
+  margin-top: 32px;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #0b1114;
+}
+
+/* The picture is drawn larger than its frame so the corner of the source video is cropped out. */
+.figure img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 116%;
+  max-width: none;
+  height: 116%;
+  object-fit: cover;
+}
+
+.sweep {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc((0.2 + 0.6 * var(--hp, 0)) * 100%);
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 18px 2px rgba(255, 107, 0, 0.7);
+  opacity: calc(min(1, var(--hp, 0) * 12) * (1 - var(--hd, 0)));
+}
+
+.fault {
+  position: absolute;
+  left: 80%;
+  top: 70%;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transition: opacity 0.8s var(--ease-out);
+}
+
+.done .fault {
+  opacity: 1;
+}
+
+.ring,
+.pulse {
+  position: absolute;
+  left: -26px;
+  top: -26px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid var(--fault);
+}
+
+.pulse {
+  opacity: 0;
+}
+
+.done .pulse {
+  animation: pulse 2.4s var(--ease-out) infinite;
+}
+
+.done .pulse2 {
+  animation-delay: -1.2s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.note {
+  margin-top: 12px;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+}
+
+/* the instrument panel */
+.panel {
+  background: rgba(9, 14, 16, 0.8);
+  border: 1px solid var(--line-strong);
+  border-radius: 20px;
+  padding: 22px 22px 20px;
+  font-family: var(--mono);
+  font-size: 13.5px;
+}
+
+:lang(ar) .panel {
+  font-family: var(--body);
+}
+
+.panelTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+}
+
+:lang(ar) .panelTitle {
+  letter-spacing: 0;
+  font-size: 13px;
+}
+
+.rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rows li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  color: rgba(236, 241, 242, 0.4);
+  border-bottom: 1px dashed rgba(157, 173, 179, 0.08);
+  transition: color 0.35s var(--ease-out);
+}
+
+.state {
+  min-width: 7ch;
+  text-align: end;
+  font-size: 12px;
+  font-family: var(--mono);
+}
+
+.run {
+  color: var(--text-primary) !important;
+}
+
+.run .state::after {
+  content: "···";
+  color: var(--accent);
+}
+
+.ok {
+  color: var(--text-primary) !important;
+}
+
+.ok .state {
+  color: var(--ok);
+}
+
+.bad {
+  color: var(--fault) !important;
+}
+
+.bad .state {
+  color: var(--fault);
+}
+
+/* AdBlue sub-checks slide open */
+.rows li.sub {
+  padding-inline-start: 18px;
+  font-size: 12.5px;
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  border: 0;
+  transition:
+    max-height 0.5s var(--ease-out),
+    opacity 0.5s var(--ease-out),
+    padding 0.5s var(--ease-out),
+    color 0.35s;
+}
+
+.open li.sub {
+  max-height: 34px;
+  opacity: 1;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.hold {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.holdButton {
+  position: relative;
+  flex: none;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--panel-2);
+  color: var(--text-primary);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  transition:
+    transform 0.3s var(--ease-out),
+    background-color 0.3s;
+}
+
+.holdButton:hover {
+  background: #22333a;
+}
+
+.pressing {
+  transform: scale(0.96);
+}
+
+.progressRing {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progressRing circle {
+  fill: none;
+  stroke-width: 4;
+}
+
+.track {
+  stroke: rgba(236, 241, 242, 0.1);
+}
+
+.fill {
+  stroke: var(--accent);
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  stroke-dashoffset: calc(283 - 283 * var(--hp, 0));
+}
+
+.icon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 34px;
+  height: 34px;
+  color: var(--accent);
+}
+
+.holdText {
+  font-family: var(--body);
+}
+
+.holdText b {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.holdText span {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.result {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 59, 48, 0.4);
+  background: rgba(255, 59, 48, 0.06);
+  font-family: var(--body);
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.6s var(--ease-out),
+    transform 0.6s var(--ease-out);
+}
+
+.done .result {
+  opacity: 1;
+  transform: none;
+}
+
+.code {
+  font-family: var(--mono);
+  color: var(--fault);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.result p {
+  font-size: 14.5px;
+  margin-top: 4px;
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

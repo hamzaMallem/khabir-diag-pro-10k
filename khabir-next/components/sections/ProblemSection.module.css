@@ -1,0 +1,99 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(40px, 6vw, 110px);
+  align-items: start;
+}
+
+.problem h2 {
+  margin-top: 18px;
+  max-width: 12ch;
+}
+
+.quotes {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 8px;
+}
+
+.quote {
+  position: relative;
+  padding: 22px 24px 22px 26px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  font-size: clamp(17px, 0.5vw + 15px, 21px);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.quote:nth-child(2) {
+  margin-inline-start: clamp(0px, 4vw, 56px);
+}
+
+.quote:nth-child(3) {
+  margin-inline-start: clamp(0px, 2vw, 28px);
+}
+
+.quote::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: -1px;
+  top: 22px;
+  bottom: 22px;
+  width: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.close {
+  margin-top: clamp(48px, 6vw, 80px);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(24px, 1.6vw + 12px, 38px);
+  line-height: 1.15;
+  max-width: 30ch;
+}
+
+:lang(ar) .close {
+  line-height: 1.5;
+}
+
+.close em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+/* decorative oscilloscope line */
+.osc {
+  position: absolute;
+  inset-inline-end: 0;
+  top: 50%;
+  width: min(52vw, 760px);
+  height: 160px;
+  opacity: 0.12;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.osc svg {
+  width: 200%;
+  height: 100%;
+  animation: scroll-line 9s linear infinite;
+}
+
+@keyframes scroll-line {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .quote:nth-child(n) {
+    margin-inline-start: 0;
+  }
+}

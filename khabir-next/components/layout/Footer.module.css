@@ -1,0 +1,30 @@
+.footer {
+  padding: 48px var(--gutter) 40px;
+  border-top: 1px solid var(--line);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: var(--text-secondary);
+  font-size: 14.5px;
+}
+
+.name {
+  font-family: var(--font-saira), sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 20px;
+  color: var(--text-primary);
+}
+
+.arabic {
+  font-family: var(--font-alexandria), sans-serif;
+  letter-spacing: 0;
+  color: var(--accent);
+  font-size: 16px;
+  margin-inline-start: 10px;
+}
