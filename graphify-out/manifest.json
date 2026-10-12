@@ -424,5 +424,41 @@
     "seen": 1791702046.6627357,
     "ast_hash": "1b637ca1e97243b4d8653ee72cce1cf6",
     "semantic_hash": "1b637ca1e97243b4d8653ee72cce1cf6"
+  },
+  "khabir-next/playwright.config.ts": {
+    "mtime": 1791701998.947825,
+    "seen": 1791702496.7989433,
+    "ast_hash": "25b759547941fd1ec97b1280e08f8089",
+    "semantic_hash": "25b759547941fd1ec97b1280e08f8089"
+  },
+  "khabir-next/tests/site.spec.ts": {
+    "mtime": 1791702232.8286197,
+    "seen": 1791702496.7989485,
+    "ast_hash": "32b3f9df82cf328e9c461a645fd7e58e",
+    "semantic_hash": "32b3f9df82cf328e9c461a645fd7e58e"
+  },
+  "CLAUDE.md": {
+    "mtime": 1791702268.394445,
+    "seen": 1791702496.798951,
+    "ast_hash": "e1c2001d0dde7ec8c5bdfeb9205fa3a8",
+    "semantic_hash": "e1c2001d0dde7ec8c5bdfeb9205fa3a8"
+  },
+  "docs/PROJECT_LOG.md": {
+    "mtime": 1791702266.2557645,
+    "seen": 1791702496.7989528,
+    "ast_hash": "6629b82c8496f871a12924c82fa3d042",
+    "semantic_hash": "6629b82c8496f871a12924c82fa3d042"
+  },
+  "docs/beginner-maintenance-guide.md": {
+    "mtime": 1791702389.5024688,
+    "seen": 1791702496.7989545,
+    "ast_hash": "055015c4d291c73c1ac88c8abd25107c",
+    "semantic_hash": "055015c4d291c73c1ac88c8abd25107c"
+  },
+  "docs/nextjs-rebuild-plan.md": {
+    "mtime": 1791702385.7456686,
+    "seen": 1791702496.798956,
+    "ast_hash": "86fcf875a022055e81197595a9ec6231",
+    "semantic_hash": "86fcf875a022055e81197595a9ec6231"
   }
 }
