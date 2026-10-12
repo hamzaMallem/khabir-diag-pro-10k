@@ -52,3 +52,9 @@ Running record of what has been done and what is next, so a new Claude Code sess
 - Query the graph before reading many files: `graphify query "<question>"`, `graphify path "A" "B"`, `graphify explain "X"`.
 - After code changes: `graphify update .` (AST only, no LLM).
 - Append a dated entry to this file at the end of every work session.
+
+### 2026-10-12 — review of the build
+- Verified `khabir-next`: `npm ci`, `tsc --noEmit`, `npm run lint` and `npm run build` all pass (routes `/fr`, `/ar`, `/en` prerendered).
+- Playwright: 26 of 30 pass with the preinstalled Chromium (`/opt/pw-browsers/chromium`). The 4 failures are all "hero video reaches `ready`". Cause: that Chromium cannot decode H.264 (`canPlayType` returns empty), so the hero falls back to `failed`/still frames. Scrub is still unverified in a browser with H.264 support.
+- Launch blocker: the hero videos show a "Dola AI" watermark (bottom right) and a Maserati-style trident badge on the engine cover. Replace or re-generate the footage before launch.
+- Next: replace the hero footage; re-run the scrub check in an H.264-capable browser (Chrome channel); then the remaining Next.js stages.
