@@ -46,7 +46,9 @@ export function LocationSection({ dict }: { dict: Dictionary }) {
               title={dict.loc_h}
               src={`https://www.google.com/maps?q=${lat},${lng}&z=16&output=embed`}
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
+              referrerPolicy="strict-origin-when-cross-origin"
+              // Third-party frame: only what the map needs (its own scripts, opening Google Maps in a new tab).
+              sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
             />
           ) : (
             <p className={styles.placeholder}>{dict.loc_todo}</p>

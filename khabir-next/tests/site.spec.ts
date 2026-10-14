@@ -84,6 +84,20 @@ test.describe("routing and language", () => {
     expect(json.openingHours).toContain("Fr 09:00-19:00");
   });
 
+  test("security headers are sent on every page", async ({ request }) => {
+    for (const path of ["/fr", "/ar/blog", "/ar/blog/adblue-light", "/en/services"]) {
+      const response = await request.get(path);
+      const headers = response.headers();
+      expect(headers["content-security-policy"]).toContain("frame-ancestors 'none'");
+      expect(headers["content-security-policy"]).toContain("object-src 'none'");
+      expect(headers["x-content-type-options"]).toBe("nosniff");
+      expect(headers["x-frame-options"]).toBe("DENY");
+      expect(headers["referrer-policy"]).toBe("strict-origin-when-cross-origin");
+      expect(headers["strict-transport-security"]).toContain("max-age=");
+      expect(headers["x-powered-by"]).toBeUndefined();
+    }
+  });
+
   test("translation files have identical keys", () => {
     const keys = (l: string) => Object.keys(JSON.parse(readFileSync(`messages/${l}.json`, "utf8"))).sort();
     expect(keys("ar")).toEqual(keys("fr"));
