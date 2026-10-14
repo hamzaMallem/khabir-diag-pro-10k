@@ -23,8 +23,15 @@ export const site = {
   /** schema.org format. The visible, translated hours are i_hours in messages/*.json. Empty = "to be added". */
   openingHours: ["Mo-Th 08:30-19:00", "Fr 09:00-19:00", "Sa 08:30-19:00"],
 
-  /** Absolute public URL, used for canonical links, hreflang and the sitemap. */
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/$/, ""),
+  /**
+   * Absolute public URL, used for canonical links, hreflang, the sitemap and Open Graph (server side only).
+   * Order: NEXT_PUBLIC_SITE_URL (set it once a custom domain exists), then the production domain Vercel provides
+   * at build time (VERCEL_PROJECT_PRODUCTION_URL, e.g. khabir-diag-pro-10k.vercel.app), then localhost.
+   */
+  url: (
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000")
+  ).replace(/\/$/, ""),
 } as const;
 
 /** "212632899218" -> "06 32 89 92 18" (how Moroccan numbers are written locally). */

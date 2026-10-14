@@ -61,9 +61,19 @@ Running record of what has been done and what is next, so a new Claude Code sess
 - JSON-LD now includes telephone, openingHours, geo, postalCode, areaServed = province. Test updated accordingly. Nav solid background raised to 0.92 opacity (taller bar with page links).
 - Verified: build OK, 30/30 Playwright tests, `/ar` and `/ar/about` at 375px (map pin loads, tel/wa.me links correct, no overflow).
 
+### 2026-10-14 (later) — security hardening + Vercel
+- Security headers for every route in `khabir-next/next.config.ts`: CSP (self-hosted assets only, Google Maps frames, `object-src 'none'`, `frame-ancestors 'none'`), HSTS (2 years), nosniff, X-Frame-Options DENY, Referrer-Policy, Permissions-Policy, COOP; `poweredByHeader: false`. `'unsafe-inline'` scripts kept on purpose: nonces would force dynamic rendering of every page.
+- Google Maps iframe sandboxed (`allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox`).
+- New Playwright test: security headers on every page type (31 tests total, all pass).
+- `npm audit`: 0 runtime vulnerabilities; 5 "high" findings are dev-only (`eslint-config-next` → `braces`), fix requires a breaking downgrade, left as is.
+- **Vercel**: project `khabir-diag-pro-10k` (team `mallemdevs-9140s-projects`) is linked to the GitHub repo and deploys `main` automatically on every push. Production: https://khabir-diag-pro-10k.vercel.app (headers verified live).
+- `site.url` now falls back to Vercel's `VERCEL_PROJECT_PRODUCTION_URL`, so canonical/sitemap/Open Graph use the production domain without any env var (the Vercel connector had no permission to create env vars: 403). Set `NEXT_PUBLIC_SITE_URL` in the Vercel dashboard once a custom domain exists.
+
 ## Next steps (in order)
 
 1. Get from the owner: real workshop photos (about page + hero alternatives).
+2. Optional: buy/connect a custom domain in Vercel, then set `NEXT_PUBLIC_SITE_URL` to it.
+3. Submit `https://khabir-diag-pro-10k.vercel.app/sitemap.xml` to Google Search Console; create/claim the Google Business Profile link to the site.
 2. Publish an article every 3 days: add `content/blog/ar/<slug>.mdx`. Next topics: DSG/7G-Tronic faults, battery draining overnight, NOx sensor before replacing the catalyst. Optional: a scheduled task that drafts (not publishes) the next article for review.
 3. Optional: add Playwright tests for the new pages; review with the `web-design-guidelines` and `vercel-react-best-practices` skills.
 4. Deploy (Vercel or other) and set `NEXT_PUBLIC_SITE_URL`.
