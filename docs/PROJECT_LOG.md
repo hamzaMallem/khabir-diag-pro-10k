@@ -5,7 +5,7 @@ Running record of what has been done and what is next, so a new Claude Code sess
 ## Status at a glance
 
 - **Static site** (`khabir-diagnostic-auto-pro/index.html`): done, tested locally and on phone width (375x812), FR/AR(RTL)/EN, scroll-scrub hero, WhatsApp CTA.
-- **Next.js rebuild** (`khabir-next/`): Stage 1 scaffolded, **not yet built or tested**. Scrub proof unverified.
+- **Next.js rebuild** (`khabir-next/`): builds (20 static pages), 30/30 Playwright tests pass. Pages: home, services, blog (MDX), about. Arabic copy in Moroccan Darija.
 - **Knowledge graph** (`graphify-out/`): built 2026-10-11.
 - **Blocked on the owner**: real WhatsApp number, exact address, opening hours, real workshop photos (all placeholders today).
 
@@ -39,13 +39,25 @@ Running record of what has been done and what is next, so a new Claude Code sess
   - Health check: 17 dangling-endpoint edges, 19 self-loops.
 - **Pushed to GitHub**: https://github.com/hamzaMallem/khabir-diag-pro-10k.git (branch `main`).
 
+### 2026-10-14 — skills, Darija copy, new pages
+- Product scope agreed with the user: landing + WhatsApp + workshop location + services + articles every 3 days + about. Arabic copy in **Moroccan Darija**. No new guarantees (owner has confirmed none).
+- Installed Vercel skills (project-local): `vercel-react-best-practices`, `web-design-guidelines` (`npx skills add vercel-labs/agent-skills ...`). Skipped the others (react-native, deploy, optimize, writing, view-transitions, composition).
+- `npm run build` run for the first time: passed with no fixes needed.
+- `messages/ar.json` rewritten in Darija; new keys (nav, location, services page, about, blog) added to ar/fr/en (141 keys each). FR copy unchanged except new keys and `[année]` in the WhatsApp message.
+- New pages: `/[locale]/services`, `/[locale]/about`, `/[locale]/blog`, `/[locale]/blog/[slug]`. Shared parts in `components/pages/`, per-page metadata via `lib/pageMetadata.ts`.
+- Blog = MDX files in `khabir-next/content/blog/<locale>/<slug>.mdx` with `export const metadata = { title, description, date: "YYYY-MM-DD", tags }` (`@next/mdx`, `lib/blog.ts`). Two Arabic articles: `adblue-light`, `code-comes-back`. FR/EN blog shows an empty state pointing to Arabic.
+- `LocationSection` on the home page: shows the Google Maps embed only once `site.streetAddress` is set in `config/site.ts`; placeholder until then.
+- Nav: page links (second scrolling row under 1080px), language switch keeps the current page, WhatsApp fallback link works from inner pages. Footer lists the pages. Sitemap includes all pages and articles.
+- Verified: build OK, 30/30 Playwright tests, `/ar/*` pages checked at 375px (RTL OK, no overflow, no console errors).
+- Added `khabir-next` (`npm run start`, port 3000) to `.claude/launch.json`.
+
 ## Next steps (in order)
 
-1. `cd khabir-next && npm run build` and fix whatever breaks (nothing has been built yet).
-2. Verify scroll scrub with the Playwright check (`khabir-next/tests/scrub-check.mjs`) on desktop and mobile contexts.
-3. Finish remaining Next.js stages from `docs/nextjs-migration-plan.md` / `docs/claude-code-nextjs-dual-video-prompt.md`.
-4. Get from the owner: WhatsApp number, address, opening hours, real workshop photos; replace placeholders.
-5. Optional graph cleanups: exclude `.claude/` from graphify (`.graphifyignore`) and rebuild; re-read `index.html` fully; `graphify hook install` for auto-update on commit.
+1. Get from the owner: WhatsApp number (`NEXT_PUBLIC_WHATSAPP_NUMBER`), street address + hours (`config/site.ts`), the workshop story, real photos. The map and the about-page placeholders switch on automatically once filled.
+2. Publish an article every 3 days: add `content/blog/ar/<slug>.mdx`. Next topics: DSG/7G-Tronic faults, battery draining overnight, NOx sensor before replacing the catalyst. Optional: a scheduled task that drafts (not publishes) the next article for review.
+3. Optional: add Playwright tests for the new pages; review with the `web-design-guidelines` and `vercel-react-best-practices` skills.
+4. Deploy (Vercel or other) and set `NEXT_PUBLIC_SITE_URL`.
+5. Optional graph cleanups: exclude `.claude/` from graphify (`.graphifyignore`) and rebuild; `graphify label` to rename communities; re-read `index.html` fully.
 
 ## Conventions
 

@@ -6,6 +6,7 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { DiagnosticDemo } from "@/components/sections/DiagnosticDemo";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { JsonLd } from "@/components/sections/JsonLd";
+import { LocationSection } from "@/components/sections/LocationSection";
 import { MethodSection } from "@/components/sections/MethodSection";
 import { ProblemSection } from "@/components/sections/ProblemSection";
 import { PromisesSection } from "@/components/sections/PromisesSection";
@@ -55,6 +56,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <ServicesSection dict={dict} />
       <PromisesSection dict={dict} />
       <FaqSection dict={dict} />
+      <LocationSection dict={dict} />
       <ContactSection dict={dict} />
       <JsonLd dict={dict} locale={locale} />
     </main>

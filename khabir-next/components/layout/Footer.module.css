@@ -21,6 +21,25 @@
   color: var(--text-primary);
 }
 
+.links {
+  list-style: none;
+  padding: 0;
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-size: 14.5px;
+}
+
+.links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: var(--text-primary);
+}
+
 .arabic {
   font-family: var(--font-alexandria), sans-serif;
   letter-spacing: 0;

@@ -65,6 +65,55 @@
   margin-top: 4px;
 }
 
+/* Page links. On narrower screens they move to a second row that scrolls sideways. */
+.links {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.links a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14.5px;
+  white-space: nowrap;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+}
+
+.links a:hover,
+.links a[aria-current="page"] {
+  color: var(--text-primary);
+}
+
+.links a[aria-current="page"] {
+  background: var(--panel-2);
+}
+
+@media (max-width: 1080px) {
+  .nav {
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+  .links {
+    order: 3;
+    width: 100%;
+    margin: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .links a {
+    padding: 6px 10px;
+    font-size: 13.5px;
+  }
+}
+
 .right {
   display: flex;
   align-items: center;

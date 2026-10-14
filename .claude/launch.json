@@ -6,6 +6,12 @@
       "runtimeExecutable": "npx.cmd",
       "runtimeArgs": ["-y", "http-server", "khabir-diagnostic-auto-pro", "-p", "8080", "-c-1", "--silent"],
       "port": 8080
+    },
+    {
+      "name": "khabir-next",
+      "runtimeExecutable": "npm.cmd",
+      "runtimeArgs": ["--prefix", "khabir-next", "run", "start"],
+      "port": 3000
     }
   ]
 }

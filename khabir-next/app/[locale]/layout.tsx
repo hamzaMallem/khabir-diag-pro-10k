@@ -8,7 +8,7 @@ import { getDictionary } from "@/i18n/dictionaries";
 import { getWhatsAppHref } from "@/lib/whatsapp";
 import { Background } from "@/components/layout/Background";
 import { Footer } from "@/components/layout/Footer";
-import { Nav } from "@/components/layout/Nav";
+import { Nav, type NavLink } from "@/components/layout/Nav";
 import "@/styles/globals.css";
 
 // Fonts are downloaded at build time and served from our own domain. Each sets a CSS variable used in styles/globals.css.
@@ -59,6 +59,13 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const dict = await getDictionary(locale);
+  // Shared by the top bar and the footer. To add a page: create app/[locale]/<path>/page.tsx and add it here.
+  const links: NavLink[] = [
+    { path: "", label: dict.nav_home },
+    { path: "/services", label: dict.nav_services },
+    { path: "/blog", label: dict.nav_blog },
+    { path: "/about", label: dict.nav_about },
+  ];
 
   return (
     <html lang={locale} dir={getDirection(locale)} className={`${saira.variable} ${alexandria.variable} ${readex.variable} ${plex.variable}`}>
@@ -67,9 +74,16 @@ export default async function LocaleLayout({ children, params }: { children: Rea
           {dict.skip}
         </a>
         <Background />
-        <Nav locale={locale} ctaLabel={dict.cta} ctaHref={getWhatsAppHref(dict.wa_msg)} languageLabel={dict.lang_label} />
+        <Nav
+          locale={locale}
+          ctaLabel={dict.cta}
+          ctaHref={getWhatsAppHref(dict.wa_msg)}
+          languageLabel={dict.lang_label}
+          pagesLabel={dict.nav_label}
+          links={links}
+        />
         {children}
-        <Footer dict={dict} />
+        <Footer dict={dict} locale={locale} links={links} />
       </body>
     </html>
   );
