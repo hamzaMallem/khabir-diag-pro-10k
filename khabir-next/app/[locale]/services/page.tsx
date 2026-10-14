@@ -5,6 +5,7 @@ import { getDictionary } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/lib/pageMetadata";
 import { PageHeader, WhatsAppCta } from "@/components/pages/PageParts";
 import { FaqSection } from "@/components/sections/FaqSection";
+import { RoadsideCallout } from "@/components/sections/LocationSection";
 import { MethodSection } from "@/components/sections/MethodSection";
 import { PromisesSection } from "@/components/sections/PromisesSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
@@ -27,6 +28,11 @@ export default async function ServicesPage({ params }: Params) {
     <main id="main" tabIndex={-1}>
       <PageHeader kicker={dict.svp_kicker} title={dict.svp_h} intro={dict.svp_p} />
       <ServicesSection dict={dict} />
+      <section className="section" style={{ paddingTop: 0 }} aria-label={dict.rs_t}>
+        <div className="wrap">
+          <RoadsideCallout dict={dict} />
+        </div>
+      </section>
       <MethodSection dict={dict} />
       <PromisesSection dict={dict} />
       <FaqSection dict={dict} />

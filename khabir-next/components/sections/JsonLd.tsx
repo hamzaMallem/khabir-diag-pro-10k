@@ -4,8 +4,7 @@ import { site } from "@/config/site";
 
 /**
  * Structured data for search engines (schema.org AutoRepair).
- * Only facts we actually know are included. The phone number and opening hours are added automatically
- * once they are filled in config/site.ts.
+ * Only facts confirmed by the owner are included; empty fields in config/site.ts are left out.
  */
 export function JsonLd({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const data = {
@@ -16,15 +15,17 @@ export function JsonLd({ dict, locale }: { dict: Dictionary; locale: Locale }) {
     url: `${site.url}/${locale}`,
     image: `${site.url}/media/hero-desktop-poster.jpg`,
     description: dict.meta_desc,
-    areaServed: { "@type": "City", name: site.city },
+    areaServed: { "@type": "AdministrativeArea", name: "Province de Béni Mellal" },
     address: {
       "@type": "PostalAddress",
       addressLocality: site.city,
       addressCountry: site.country,
+      postalCode: site.postalCode,
       ...(site.streetAddress ? { streetAddress: site.streetAddress } : {}),
     },
+    ...(site.streetAddress ? { geo: { "@type": "GeoCoordinates", latitude: site.geo.lat, longitude: site.geo.lng }, hasMap: site.mapsUrl } : {}),
     ...(site.whatsappNumber ? { telephone: `+${site.whatsappNumber}` } : {}),
-    ...(site.openingHours ? { openingHours: site.openingHours } : {}),
+    ...(site.openingHours.length > 0 ? { openingHours: site.openingHours } : {}),
   };
 
   // "<" is escaped so the JSON can never end the script tag early.

@@ -31,6 +31,77 @@
   filter: grayscale(0.4) contrast(1.05);
 }
 
+.facts {
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.facts dt {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+:lang(ar) .facts dt {
+  font-family: var(--body);
+  font-size: 13.5px;
+  letter-spacing: 0;
+}
+
+.facts dd {
+  margin: 0;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Roadside call-out under the map */
+.roadside {
+  margin-top: clamp(32px, 5vw, 56px);
+  display: flex;
+  gap: clamp(18px, 3vw, 32px);
+  align-items: flex-start;
+  padding: clamp(22px, 3.5vw, 40px);
+  border-radius: 22px;
+  border: 1px solid var(--accent-muted);
+  background: linear-gradient(135deg, rgba(255, 107, 0, 0.1), var(--panel) 60%);
+}
+
+.roadsideIcon {
+  width: 56px;
+  height: 56px;
+  flex: none;
+  color: var(--accent);
+}
+
+.roadsideText {
+  display: grid;
+  gap: 12px;
+}
+
+.roadsideText h3 {
+  font-size: clamp(24px, 1.6vw + 16px, 38px);
+}
+
+.roadsideText > p:not([class]) {
+  color: var(--text-secondary);
+  max-width: 60ch;
+  line-height: 1.7;
+}
+
+@media (max-width: 560px) {
+  .roadside {
+    flex-direction: column;
+  }
+  .roadsideIcon {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 .placeholder {
   color: var(--text-secondary);
   border: 1px dashed var(--line-strong);

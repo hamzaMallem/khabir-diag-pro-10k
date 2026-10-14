@@ -1,7 +1,8 @@
 import type { Dictionary } from "@/i18n/dictionaries";
-import { site } from "@/config/site";
+import { formatLocalPhone, site } from "@/config/site";
 import { getWhatsAppHref, isWhatsAppConfigured } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/Button";
+import { PhoneLinks } from "@/components/ui/PhoneLinks";
 import { Reveal } from "@/components/ui/Reveal";
 import styles from "./ContactSection.module.css";
 
@@ -43,26 +44,23 @@ export function ContactSection({ dict }: { dict: Dictionary }) {
         <div className={styles.info}>
           <div>
             <p className={styles.label}>{dict.i_addr_l}</p>
-            <p className={styles.value}>
-              {site.streetAddress ? `${site.streetAddress}, ` : null}
-              {dict.i_addr}
-              {site.streetAddress ? null : (
-                <>
-                  {" · "}
-                  {todo}
-                </>
-              )}
-            </p>
+            <p className={styles.value}>{site.streetAddress ? dict.i_addr : todo}</p>
           </div>
           <div>
             <p className={styles.label}>{dict.i_hours_l}</p>
-            <p className={styles.value}>{site.openingHours || todo}</p>
+            <p className={styles.value}>{site.openingHours.length > 0 ? dict.i_hours : todo}</p>
           </div>
           <div>
             <p className={styles.label}>WhatsApp</p>
-            <p className={styles.value}>{isWhatsAppConfigured ? <bdi dir="ltr">+{site.whatsappNumber}</bdi> : todo}</p>
+            <p className={styles.value}>{isWhatsAppConfigured ? <bdi dir="ltr">{formatLocalPhone(site.whatsappNumber)}</bdi> : todo}</p>
           </div>
         </div>
+        {site.phones.length > 0 && (
+          <div className={styles.phones}>
+            <p className={styles.label}>{dict.ph_l}</p>
+            <PhoneLinks dict={dict} />
+          </div>
+        )}
       </Reveal>
     </section>
   );

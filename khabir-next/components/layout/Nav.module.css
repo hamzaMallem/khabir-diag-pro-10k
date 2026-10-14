@@ -15,7 +15,7 @@
 }
 
 .solid {
-  background: rgba(14, 21, 24, 0.78);
+  background: rgba(14, 21, 24, 0.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-color: var(--line);

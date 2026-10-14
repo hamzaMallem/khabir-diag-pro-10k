@@ -44,6 +44,31 @@
   line-height: 1.7;
 }
 
+.team {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.team li {
+  display: grid;
+  gap: 2px;
+  padding-inline-start: 14px;
+  border-inline-start: 2px solid var(--accent);
+}
+
+.team strong {
+  font-family: var(--display);
+  font-size: 20px;
+  color: var(--text-primary);
+}
+
+.team span {
+  color: var(--text-secondary);
+}
+
 .todo {
   color: var(--text-secondary);
   font-family: var(--mono);

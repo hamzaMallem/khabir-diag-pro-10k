@@ -67,6 +67,18 @@
   font-size: 13px;
 }
 
+.phones {
+  margin: 24px auto 0;
+  max-width: 980px;
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+}
+
+.phones ul {
+  justify-content: center;
+}
+
 .value {
   margin-top: 6px;
   font-weight: 400;

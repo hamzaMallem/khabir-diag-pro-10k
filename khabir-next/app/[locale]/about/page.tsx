@@ -20,8 +20,12 @@ export default async function AboutPage({ params }: Params) {
   if (!isLocale(locale)) notFound();
   const dict = await getDictionary(locale);
 
-  // The story and the photos come from the owner. Until then they show "to be added" instead of invented content.
+  // Story and team confirmed by the owner (2026-10-14). Photos still to come: "to be added" instead of invented content.
   const todo = <span className={styles.todo}>{dict.i_todo}</span>;
+  const team = [
+    { id: "youssef", name: dict.tm_youssef, text: dict.tm_youssef_p },
+    { id: "saidi", name: dict.tm_saidi, text: dict.tm_saidi_p },
+  ];
 
   return (
     <main id="main" tabIndex={-1}>
@@ -31,17 +35,28 @@ export default async function AboutPage({ params }: Params) {
           <div className={styles.blocks}>
             <Reveal as="article" className={styles.block} index={0}>
               <h2>{dict.ab_story_t}</h2>
-              {todo}
+              <p>{dict.ab_story_p}</p>
             </Reveal>
             <Reveal as="article" className={styles.block} index={1}>
+              <h2>{dict.ab_team_t}</h2>
+              <ul className={styles.team}>
+                {team.map((member) => (
+                  <li key={member.id}>
+                    <strong>{member.name}</strong>
+                    <span>{member.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+            <Reveal as="article" className={styles.block} index={2}>
               <h2>{dict.ab_method_t}</h2>
               <p>{dict.ab_method_p}</p>
             </Reveal>
-            <Reveal as="article" className={styles.block} index={2}>
+            <Reveal as="article" className={styles.block} index={3}>
               <h2>{dict.ab_tools_t}</h2>
               <p>{dict.ab_tools_p}</p>
             </Reveal>
-            <Reveal as="article" className={styles.block} index={3}>
+            <Reveal as="article" className={styles.block} index={4}>
               <h2>{dict.ab_photos_t}</h2>
               {todo}
             </Reveal>

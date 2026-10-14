@@ -7,7 +7,7 @@ Running record of what has been done and what is next, so a new Claude Code sess
 - **Static site** (`khabir-diagnostic-auto-pro/index.html`): done, tested locally and on phone width (375x812), FR/AR(RTL)/EN, scroll-scrub hero, WhatsApp CTA.
 - **Next.js rebuild** (`khabir-next/`): builds (20 static pages), 30/30 Playwright tests pass. Pages: home, services, blog (MDX), about. Arabic copy in Moroccan Darija.
 - **Knowledge graph** (`graphify-out/`): built 2026-10-11.
-- **Blocked on the owner**: real WhatsApp number, exact address, opening hours, real workshop photos (all placeholders today).
+- **Contact details**: WhatsApp, phones, address, map and hours are real (2026-10-14). **Still missing from the owner**: real workshop photos.
 
 ## Timeline
 
@@ -51,9 +51,19 @@ Running record of what has been done and what is next, so a new Claude Code sess
 - Verified: build OK, 30/30 Playwright tests, `/ar/*` pages checked at 375px (RTL OK, no overflow, no console errors).
 - Added `khabir-next` (`npm run start`, port 3000) to `.claude/launch.json`.
 
+### 2026-10-14 (later) — real contact details
+- From the user and the Google Maps listing (https://maps.app.goo.gl/hEALPzvM1aEfoSbr5), now in `khabir-next/config/site.ts`:
+  - WhatsApp (all CTAs) = Saidi `+212 6 32 89 92 18`; second number = Youssef (the expert) `+212 6 71 76 58 96`. Both shown as tap-to-call (`components/ui/PhoneLinks.tsx`).
+  - Address: proche Pharmacie Hay Redouane, Quartier Hay Redouane, Beni-Mellal 23000; geo 32.3415409, -6.3638183 (map embed by coordinates).
+  - Hours: Mon–Thu and Sat 08:30–19:00, Fri 09:00–19:00, Sun closed. Translated text in `i_hours`.
+- New service: travel anywhere in Beni Mellal province (mountains, far from the workshop), at night, every day, **no price mentioned** (user's choice). `RoadsideCallout` under the map (home) and on /services.
+- About page: story + team: Youssef, the expert, 25 years of experience; Saidi, 5 years. Workshop photos still "to be added".
+- JSON-LD now includes telephone, openingHours, geo, postalCode, areaServed = province. Test updated accordingly. Nav solid background raised to 0.92 opacity (taller bar with page links).
+- Verified: build OK, 30/30 Playwright tests, `/ar` and `/ar/about` at 375px (map pin loads, tel/wa.me links correct, no overflow).
+
 ## Next steps (in order)
 
-1. Get from the owner: WhatsApp number (`NEXT_PUBLIC_WHATSAPP_NUMBER`), street address + hours (`config/site.ts`), the workshop story, real photos. The map and the about-page placeholders switch on automatically once filled.
+1. Get from the owner: real workshop photos (about page + hero alternatives).
 2. Publish an article every 3 days: add `content/blog/ar/<slug>.mdx`. Next topics: DSG/7G-Tronic faults, battery draining overnight, NOx sensor before replacing the catalyst. Optional: a scheduled task that drafts (not publishes) the next article for review.
 3. Optional: add Playwright tests for the new pages; review with the `web-design-guidelines` and `vercel-react-best-practices` skills.
 4. Deploy (Vercel or other) and set `NEXT_PUBLIC_SITE_URL`.
