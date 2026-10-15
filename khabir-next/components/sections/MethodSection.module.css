@@ -15,7 +15,7 @@
 .step {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 20px;
+  border-radius: 28px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -49,9 +49,9 @@
 }
 
 .num {
-  font-family: var(--mono);
+  font-family: var(--body);
   font-size: 12.5px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0;
   color: var(--accent);
   display: flex;
   align-items: center;
@@ -86,7 +86,6 @@
 
 .step h3 {
   font-size: clamp(28px, 1.4vw + 16px, 38px);
-  text-transform: uppercase;
   margin: 10px 0;
 }
 

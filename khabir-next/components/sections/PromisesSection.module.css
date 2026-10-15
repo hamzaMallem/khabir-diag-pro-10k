@@ -35,7 +35,7 @@
 }
 
 .n {
-  font-family: var(--mono);
+  font-family: var(--body);
   color: var(--accent);
   font-size: 13px;
   letter-spacing: 0.1em;
@@ -43,7 +43,6 @@
 
 .list h3 {
   font-size: clamp(26px, 1.4vw + 16px, 40px);
-  text-transform: uppercase;
 }
 
 :lang(ar) .list h3 {

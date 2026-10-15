@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Alexandria, IBM_Plex_Mono, Readex_Pro, Saira_Condensed } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans_Arabic, Inter } from "next/font/google";
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { site } from "@/config/site";
@@ -12,9 +12,9 @@ import { Nav, type NavLink } from "@/components/layout/Nav";
 import "@/styles/globals.css";
 
 // Fonts are downloaded at build time and served from our own domain. Each sets a CSS variable used in styles/globals.css.
-const saira = Saira_Condensed({ subsets: ["latin"], weight: ["600", "700"], variable: "--font-saira", display: "swap" });
-const alexandria = Alexandria({ subsets: ["arabic", "latin"], weight: ["600", "700"], variable: "--font-alexandria", display: "swap" });
-const readex = Readex_Pro({ subsets: ["arabic", "latin"], weight: ["300", "400", "500"], variable: "--font-readex", display: "swap" });
+// Apple-style pairing: Inter (variable, closest open face to SF Pro) for Latin, IBM Plex Sans Arabic for Arabic, Plex Mono only for scan data.
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const plexArabic = IBM_Plex_Sans_Arabic({ subsets: ["arabic"], weight: ["300", "400", "500", "600", "700"], variable: "--font-plex-arabic", display: "swap" });
 const plex = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-plex", display: "swap" });
 
 type LayoutParams = { params: Promise<{ locale: string }> };
@@ -68,7 +68,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   ];
 
   return (
-    <html lang={locale} dir={getDirection(locale)} className={`${saira.variable} ${alexandria.variable} ${readex.variable} ${plex.variable}`}>
+    <html lang={locale} dir={getDirection(locale)} className={`${inter.variable} ${plexArabic.variable} ${plex.variable}`}>
       <body>
         <a className="skip" href="#main">
           {dict.skip}

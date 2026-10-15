@@ -22,7 +22,7 @@
   padding: 22px 24px 22px 26px;
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 28px;
   font-size: clamp(17px, 0.5vw + 15px, 21px);
   font-weight: 400;
   line-height: 1.45;

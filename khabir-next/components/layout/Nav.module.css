@@ -15,9 +15,9 @@
 }
 
 .solid {
-  background: rgba(14, 21, 24, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(14, 21, 24, 0.72);
+  backdrop-filter: saturate(180%) blur(22px);
+  -webkit-backdrop-filter: saturate(180%) blur(22px);
   border-color: var(--line);
 }
 
@@ -41,26 +41,26 @@
 }
 
 .brandName {
-  font-family: var(--font-saira), sans-serif;
+  font-family: var(--display);
   font-weight: 700;
   font-size: 22px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   display: flex;
   align-items: baseline;
   gap: 8px;
 }
 
 .brandArabic {
-  font-family: var(--font-alexandria), sans-serif;
+  font-family: var(--display);
   font-size: 17px;
   letter-spacing: 0;
   color: var(--accent);
 }
 
 .brandSub {
-  font-family: var(--mono);
+  font-family: var(--body);
   font-size: 10.5px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0;
   color: var(--text-secondary);
   margin-top: 4px;
 }
@@ -157,9 +157,9 @@
   padding: 0 8px;
   border-radius: 999px;
   color: var(--text-secondary);
-  font-family: var(--mono);
+  font-family: var(--body);
   font-size: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-decoration: none;
   transition:
     color 0.3s,
@@ -167,7 +167,7 @@
 }
 
 .langs a[lang="ar"] {
-  font-family: var(--font-alexandria), sans-serif;
+  font-family: var(--display);
   font-size: 14px;
   letter-spacing: 0;
   line-height: 1;
