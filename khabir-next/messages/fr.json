@@ -155,5 +155,7 @@
   "bl_meta_desc": "Conseils sur les pannes des voitures allemandes : AdBlue, codes qui reviennent, boîte automatique, batterie, capteurs NOx.",
   "nav_cta": "Nous écrire",
   "nav_menu": "Menu",
-  "nav_close": "Fermer le menu"
+  "nav_close": "Fermer le menu",
+  "ab_ph1": "Diagnostic d’une Mercedes à l’ordinateur",
+  "ab_ph2": "Radiateur de chauffage déposé d’une Audi"
 }

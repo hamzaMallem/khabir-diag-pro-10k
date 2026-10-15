@@ -297,6 +297,17 @@ test.describe("mobile menu", () => {
     await context.close();
   });
 
+  test("about page shows the two workshop photos, loaded, with captions", async ({ page }) => {
+    await page.goto("/ar/about");
+    const figures = page.locator("figure");
+    await expect(figures).toHaveCount(2);
+    for (let i = 0; i < 2; i++) {
+      await figures.nth(i).scrollIntoViewIfNeeded();
+      await expect.poll(() => figures.nth(i).locator("img").evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(0);
+      await expect(figures.nth(i).locator("figcaption")).not.toBeEmpty();
+    }
+  });
+
   test("fr phone: language switch inside the sheet keeps the page", async ({ browser }) => {
     const context = await browser.newContext({ viewport: PHONE, hasTouch: true });
     const page = await context.newPage();

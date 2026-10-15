@@ -49,7 +49,7 @@ const nextConfig: NextConfig = {
       },
       // Other images: a day, then refresh quietly in the background.
       {
-        source: "/media/:file(step-.*)",
+        source: "/media/:file((?:step|workshop)-.*)",
         headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
       },
     ];

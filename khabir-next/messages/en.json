@@ -155,5 +155,7 @@
   "bl_meta_desc": "Advice on German car faults: AdBlue, codes that come back, automatic gearboxes, batteries, NOx sensors.",
   "nav_cta": "Message us",
   "nav_menu": "Menu",
-  "nav_close": "Close menu"
+  "nav_close": "Close menu",
+  "ab_ph1": "Diagnosing a Mercedes with a laptop",
+  "ab_ph2": "Heater core removed from an Audi"
 }

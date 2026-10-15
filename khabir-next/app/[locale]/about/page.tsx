@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -20,8 +21,11 @@ export default async function AboutPage({ params }: Params) {
   if (!isLocale(locale)) notFound();
   const dict = await getDictionary(locale);
 
-  // Story and team confirmed by the owner (2026-10-14). Photos still to come: "to be added" instead of invented content.
-  const todo = <span className={styles.todo}>{dict.i_todo}</span>;
+  // Story and team confirmed by the owner (2026-10-14). Photos are real shots from the workshop (public/media/workshop-*.jpg).
+  const photos = [
+    { src: "/media/workshop-1.jpg", width: 1080, height: 1080, caption: dict.ab_ph1 },
+    { src: "/media/workshop-2.jpg", width: 1000, height: 1334, caption: dict.ab_ph2 },
+  ];
   const team = [
     { id: "youssef", name: dict.tm_youssef, text: dict.tm_youssef_p },
     { id: "saidi", name: dict.tm_saidi, text: dict.tm_saidi_p },
@@ -58,7 +62,14 @@ export default async function AboutPage({ params }: Params) {
             </Reveal>
             <Reveal as="article" className={styles.block} index={4}>
               <h2>{dict.ab_photos_t}</h2>
-              {todo}
+              <div className={styles.photos}>
+                {photos.map((photo) => (
+                  <figure key={photo.src} className={styles.photo}>
+                    <Image src={photo.src} alt={photo.caption} width={photo.width} height={photo.height} sizes="(max-width: 700px) 100vw, 50vw" />
+                    <figcaption>{photo.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
             </Reveal>
           </div>
           <WhatsAppCta locale={locale} title={dict.cta_h} text={dict.cta_sub} label={dict.cta} message={dict.wa_msg} />
