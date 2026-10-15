@@ -19,7 +19,7 @@
 
 .quote {
   position: relative;
-  padding: 22px 24px 22px 26px;
+  padding: 24px 28px;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 28px;
@@ -34,17 +34,6 @@
 
 .quote:nth-child(3) {
   margin-inline-start: clamp(0px, 2vw, 28px);
-}
-
-.quote::before {
-  content: "";
-  position: absolute;
-  inset-inline-start: -1px;
-  top: 22px;
-  bottom: 22px;
-  width: 2px;
-  background: var(--accent);
-  border-radius: 2px;
 }
 
 .close {
