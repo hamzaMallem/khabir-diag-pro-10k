@@ -43,12 +43,19 @@ export interface HeroVariant {
  */
 export const MOBILE_QUERY = "(max-width: 720px), (orientation: portrait)";
 
+/**
+ * Hero files are cached by browsers for a year (see next.config.ts). Bump this number whenever you replace
+ * any hero video or image in public/media, so returning visitors download the new file.
+ */
+const MEDIA_VERSION = 2;
+const media = (file: string) => `/media/${file}?v=${MEDIA_VERSION}`;
+
 export const hero: Record<VariantId, HeroVariant> = {
   desktop: {
     id: "desktop",
-    src: "/media/hero-desktop.mp4",
-    poster: "/media/hero-desktop-poster.jpg",
-    endFrame: "/media/hero-desktop-end.jpg",
+    src: media("hero-desktop.mp4"),
+    poster: media("hero-desktop-poster.jpg"),
+    endFrame: media("hero-desktop-end.jpg"),
     duration: 15.04,
     endAt: 0.9,
     scrollDistanceVh: 500,
@@ -62,9 +69,9 @@ export const hero: Record<VariantId, HeroVariant> = {
   },
   mobile: {
     id: "mobile",
-    src: "/media/hero-mobile.mp4",
-    poster: "/media/hero-mobile-poster.jpg",
-    endFrame: "/media/hero-mobile-end.jpg",
+    src: media("hero-mobile.mp4"),
+    poster: media("hero-mobile-poster.jpg"),
+    endFrame: media("hero-mobile-end.jpg"),
     duration: 15.04,
     endAt: 0.9,
     scrollDistanceVh: 420,

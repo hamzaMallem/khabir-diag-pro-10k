@@ -98,6 +98,15 @@ test.describe("routing and language", () => {
     }
   });
 
+  test("versioned hero media is cached for a year, unversioned files are not pinned", async ({ request }) => {
+    const versioned = await request.head("/media/hero-desktop.mp4?v=2");
+    expect(versioned.headers()["cache-control"]).toContain("immutable");
+    expect(versioned.headers()["cache-control"]).toContain("max-age=31536000");
+    const plain = await request.head("/media/hero-desktop.mp4");
+    expect(plain.headers()["cache-control"] ?? "").not.toContain("immutable");
+    expect((await request.get("/fr")).headers()["content-security-policy"]).toContain("media-src 'self' blob:");
+  });
+
   test("translation files have identical keys", () => {
     const keys = (l: string) => Object.keys(JSON.parse(readFileSync(`messages/${l}.json`, "utf8"))).sort();
     expect(keys("ar")).toEqual(keys("fr"));
@@ -147,7 +156,7 @@ test.describe("scroll-controlled hero video", () => {
   });
 
   test("a failing video keeps captions and falls back to still frames", async ({ page }) => {
-    await page.route("**/*.mp4", (route) => route.abort());
+    await page.route("**/*.mp4*", (route) => route.abort());
     const problems = trackProblems(page);
     await page.goto("/fr");
     await expect(page.locator('#top[data-status="failed"]')).toBeVisible({ timeout: 15_000 });

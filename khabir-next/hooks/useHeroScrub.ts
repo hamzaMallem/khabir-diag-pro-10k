@@ -3,6 +3,7 @@
 import { useEffect, useState, type RefObject } from "react";
 import { hero, MOBILE_QUERY, VIDEO_STALL_TIMEOUT_MS, type HeroVariant } from "@/config/hero";
 import { createCaptionController } from "@/lib/captions";
+import { downloadVideo, shouldSkipVideo, type HeroDownload } from "@/lib/heroVideo";
 import { clamp, smoothstep } from "@/lib/math";
 
 /**
@@ -52,11 +53,23 @@ export function useHeroScrub(sectionRef: RefObject<HTMLElement | null>): HeroSta
     let lastRing = -1;
     let lastEnd = -1;
     let lastCue = -1;
+    let loadToken = 0; // bumped whenever a download is replaced or cancelled, so late results are ignored
+    let objectUrl: string | null = null; // blob URL of the downloaded video
+    let abort: AbortController | null = null;
 
     const changeStatus = (next: HeroStatus) => {
       currentStatus = next;
       setStatus(next);
     };
+
+    // Stop any download in progress and free the in-memory video.
+    function releaseVideo() {
+      loadToken++;
+      abort?.abort();
+      abort = null;
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+      objectUrl = null;
+    }
 
     // 0 to 1: how far the hero has been scrolled through.
     function scrollProgress() {
@@ -149,6 +162,7 @@ export function useHeroScrub(sectionRef: RefObject<HTMLElement | null>): HeroSta
     function fail() {
       if (ready || !active || currentStatus === "failed") return;
       clearTimeout(stallTimer);
+      releaseVideo();
       video!.removeAttribute("src");
       video!.load(); // aborts any download still running
       endLayer!.style.backgroundImage = `url('${variant.endFrame}')`;
@@ -190,8 +204,47 @@ export function useHeroScrub(sectionRef: RefObject<HTMLElement | null>): HeroSta
       captions.reset();
       changeStatus("loading");
       video!.muted = true; // React does not reliably set the muted property; iOS needs it for seeking without a tap
-      video!.src = next.src;
-      video!.load();
+      releaseVideo();
+      if (shouldSkipVideo()) return fail(); // data-saver or 2G: still frames only
+
+      // The inline script in the page usually started this download already (lib/heroVideo.ts); otherwise start it now.
+      const early = window.__heroPre;
+      window.__heroPre = undefined;
+      let download: HeroDownload;
+      if (early && early.id === next.id) {
+        download = early;
+      } else {
+        abort = new AbortController();
+        download = downloadVideo(next.id, next.src, abort.signal);
+      }
+
+      const token = loadToken;
+      const onBytes = (loaded: number, total: number) => {
+        if (token !== loadToken || ready) return;
+        armStallTimer(); // bytes are still arriving
+        const fraction = total > 0 ? Math.round((loaded / total) * 50) / 50 : 0;
+        if (fraction !== lastRing) {
+          lastRing = fraction;
+          section!.style.setProperty("--load", String(fraction));
+        }
+      };
+      download.listeners.push(onBytes);
+      onBytes(download.progress.loaded, download.progress.total);
+
+      download.promise
+        .then((blob) => {
+          if (token !== loadToken) return;
+          objectUrl = URL.createObjectURL(blob);
+          video!.src = objectUrl;
+          video!.load();
+          armStallTimer();
+        })
+        .catch(() => {
+          if (token !== loadToken) return;
+          video!.src = next.src; // fall back to the browser's own streaming
+          video!.load();
+          armStallTimer();
+        });
       armStallTimer();
     }
 
@@ -237,6 +290,7 @@ export function useHeroScrub(sectionRef: RefObject<HTMLElement | null>): HeroSta
       if (frame !== null) cancelAnimationFrame(frame);
       frame = null;
       clearTimeout(stallTimer);
+      releaseVideo();
       video!.removeAttribute("src");
       video!.load();
       changeStatus("static");

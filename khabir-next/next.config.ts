@@ -16,7 +16,7 @@ const contentSecurityPolicy = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self'",
-  "media-src 'self'",
+  "media-src 'self' blob:", // the hero video is downloaded to memory and played from a blob URL
   `connect-src 'self'${vercelLive}`,
   `frame-src https://www.google.com https://maps.google.com${vercelLive}`,
   "object-src 'none'",
@@ -39,7 +39,20 @@ const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   poweredByHeader: false,
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      // Hero files carry ?v=<number> (config/hero.ts), so they can be cached for a year without ever going stale.
+      {
+        source: "/media/:file*",
+        has: [{ type: "query", key: "v" }],
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+      },
+      // Other images: a day, then refresh quietly in the background.
+      {
+        source: "/media/:file(step-.*)",
+        headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
+      },
+    ];
   },
 };
 

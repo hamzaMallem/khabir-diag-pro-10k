@@ -74,7 +74,15 @@ Running record of what has been done and what is next, so a new Claude Code sess
 - **Nav**: could not reproduce the "stacked links with bullets" report on the live site (CSS applied correctly), so the bar was hardened instead: explicit row layout and `list-style: none` on `li` + `::marker`; brand shrinks first at 560–1080px so the bar is two rows at most (it was three at ~640px). New short nav button label `nav_cta` (it reused the long hero CTA before).
 - **Copy** (ar/fr/en, 155 keys each): primary CTA is now benefit-led ("Find my fault on WhatsApp" / "Trouver ma panne sur WhatsApp" / "عرف العطب الحقيقي فواتساب"); contact heading "Send the symptom. Get a clear price."; final hero caption states the real-cause promise; services, demo, location, blog headings and meta descriptions reworded. No new guarantees added (only existing promises: written quote before work, no part without proof).
 - Tests: 34 pass (new: top-bar-is-one-row at desktop/tablet/phone; CTA text updated). tsc, lint, build clean.
+- **Brand Ticker**: Replaced static brand text in `ServicesSection` with an infinite moving marquee (`BrandTicker.tsx`, `BrandLogos.tsx`) displaying custom vector logos and names for Mercedes-Benz, BMW, Audi, Volkswagen, Porsche, MINI, Škoda, and SEAT. Smooth GPU animation with pause-on-hover, glassmorphism badges, edge gradient masks, zero horizontal overflow, and full RTL compatibility. 34/34 Playwright tests pass.
 - Not done: nothing committed or pushed; real workshop photos still missing.
+
+### 2026-10-15 (later) — faster hero video, quality untouched
+- Apple-like type system (Inter + IBM Plex Sans Arabic, light tracking, 28px radii, frosted nav); quote cards lost their orange side bar.
+- **Video loading** (no re-encode, quality unchanged): an inline script in `HeroSection` (`lib/heroVideo.ts`) starts downloading the right variant while HTML parses; `useHeroScrub` plays it from a blob URL, so scrubbing seeks in memory instead of making range requests. Falls back to normal streaming if the fetch fails; skips the video (still frames) on Data Saver / 2G.
+- **Cache**: `/media/*?v=N` is `max-age=1y, immutable`; `step-*` images 1 day + SWR. Hero URLs come from `config/hero.ts` (`MEDIA_VERSION`): **bump it whenever a file in `public/media` is replaced.** CSP now has `media-src 'self' blob:`.
+- Verified: build clean, 35 Playwright tests pass (new: cache + CSP header test); in the browser the video is one request, `video.src` is a `blob:` URL, and a second visit transfers 0 bytes.
+- Not measured: Lighthouse on a throttled real device; worth doing on the live site after deploy.
 
 ## Next steps (in order)
 

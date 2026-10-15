@@ -1,5 +1,6 @@
 import type { Dictionary } from "@/i18n/dictionaries";
 import { hero, MOBILE_QUERY } from "@/config/hero";
+import { heroPreloadScript } from "@/lib/heroVideo";
 import { getWhatsAppHref } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/Button";
 import { ScrollHero } from "./ScrollHero";
@@ -16,7 +17,10 @@ export function HeroSection({ dict }: { dict: Dictionary }) {
   const ctaHref = getWhatsAppHref(dict.wa_msg);
 
   return (
-    <ScrollHero cueLabel={dict.cue} staticHero={<StaticHero dict={dict} ctaHref={ctaHref} />}>
+    <>
+      {/* Starts downloading the right video while the page is still loading, before React runs (lib/heroVideo.ts). */}
+      <script dangerouslySetInnerHTML={{ __html: heroPreloadScript() }} />
+      <ScrollHero cueLabel={dict.cue} staticHero={<StaticHero dict={dict} ctaHref={ctaHref} />}>
       <div className={`${styles.band} ${styles.first}`} data-caption="problem">
         <div className={styles.cap}>
           <p className={`kicker ${styles.kicker}`}>{dict.b1_kicker}</p>
@@ -54,7 +58,8 @@ export function HeroSection({ dict }: { dict: Dictionary }) {
           </div>
         </div>
       </div>
-    </ScrollHero>
+      </ScrollHero>
+    </>
   );
 }
 

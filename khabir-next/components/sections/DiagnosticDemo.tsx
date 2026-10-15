@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent, type PointerEvent } from "react";
+import { hero } from "@/config/hero";
 import styles from "./DiagnosticDemo.module.css";
 
 /** Texts the demo needs (picked from messages/*.json in page.tsx). */
@@ -164,7 +165,7 @@ export function DiagnosticDemo({ labels }: { labels: DemoLabels }) {
             <p className={`lede ${styles.intro}`}>{labels.intro}</p>
             <div className={styles.figure}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/media/hero-desktop-end.jpg" alt="" width={1280} height={720} loading="lazy" decoding="async" />
+              <img src={hero.desktop.endFrame} alt="" width={1280} height={720} loading="lazy" decoding="async" />
               <div className={styles.sweep} aria-hidden="true" />
               <div className={styles.fault} aria-hidden="true">
                 <span className={styles.ring} />
