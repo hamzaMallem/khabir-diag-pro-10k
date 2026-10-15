@@ -1,4 +1,5 @@
 import type { Dictionary } from "@/i18n/dictionaries";
+import { BrandTicker } from "@/components/ui/BrandTicker";
 import { Reveal } from "@/components/ui/Reveal";
 import styles from "./ProblemSection.module.css";
 
@@ -39,6 +40,9 @@ export function ProblemSection({ dict }: { dict: Dictionary }) {
         </div>
         <Reveal as="p" className={styles.close}>
           {dict.pb_close1} <em>{dict.pb_close2}</em>
+        </Reveal>
+        <Reveal>
+          <BrandTicker label={dict.brands_l} />
         </Reveal>
       </div>
     </section>

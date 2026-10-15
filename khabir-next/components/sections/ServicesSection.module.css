@@ -86,37 +86,6 @@
   padding: 4px 10px;
 }
 
-.brands {
-  margin-top: clamp(40px, 5vw, 60px);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 10px 28px;
-  padding-top: 28px;
-  border-top: 1px solid var(--line);
-}
-
-.brandsLabel {
-  font-family: var(--body);
-  font-size: 12px;
-  letter-spacing: 0;
-  color: var(--text-secondary);
-}
-
-:lang(ar) .brandsLabel {
-  font-family: var(--body);
-  letter-spacing: 0;
-  font-size: 13px;
-}
-
-.brand {
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: clamp(20px, 1vw + 14px, 28px);
-  letter-spacing: 0;
-  color: #c9d3d6;
-}
-
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr 1fr;

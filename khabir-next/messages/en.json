@@ -153,5 +153,7 @@
   "bl_cta_p": "Send the model and year on WhatsApp and we will tell you whether a diagnosis is needed.",
   "bl_meta_title": "Articles · Khabir Diagnostic Auto Pro",
   "bl_meta_desc": "Advice on German car faults: AdBlue, codes that come back, automatic gearboxes, batteries, NOx sensors.",
-  "nav_cta": "Message us"
+  "nav_cta": "Message us",
+  "nav_menu": "Menu",
+  "nav_close": "Close menu"
 }

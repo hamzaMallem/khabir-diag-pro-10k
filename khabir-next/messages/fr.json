@@ -153,5 +153,7 @@
   "bl_cta_p": "Envoyez le modèle et l'année sur WhatsApp, on vous dit si un diagnostic est nécessaire.",
   "bl_meta_title": "Articles · Khabir Diagnostic Auto Pro",
   "bl_meta_desc": "Conseils sur les pannes des voitures allemandes : AdBlue, codes qui reviennent, boîte automatique, batterie, capteurs NOx.",
-  "nav_cta": "Nous écrire"
+  "nav_cta": "Nous écrire",
+  "nav_menu": "Menu",
+  "nav_close": "Fermer le menu"
 }

@@ -227,11 +227,7 @@ test.describe("layout", () => {
   }
 
   // Guards the top bar: page links sit side by side, no bullets or underlines, and the bar never grows past two rows.
-  for (const [name, viewport] of [
-    ["desktop", DESKTOP],
-    ["tablet portrait", TABLET],
-    ["phone portrait", PHONE],
-  ] as const) {
+  for (const [name, viewport] of [["desktop", DESKTOP]] as const) {
     test(`ar ${name}: top bar links are one tidy row`, async ({ browser }) => {
       const context = await browser.newContext({ viewport });
       const page = await context.newPage();
@@ -252,6 +248,64 @@ test.describe("layout", () => {
       await context.close();
     });
   }
+});
+
+test.describe("mobile menu", () => {
+  for (const [name, viewport] of [
+    ["phone", PHONE],
+    ["tablet", TABLET],
+  ] as const) {
+    test(`ar ${name}: one-line bar, contact button visible, menu sheet opens, navigates and closes`, async ({ browser }) => {
+      const context = await browser.newContext({ viewport, hasTouch: true });
+      const page = await context.newPage();
+      const problems = trackProblems(page);
+      await page.goto("/ar");
+      const nav = page.locator("nav");
+      expect(await nav.evaluate((el) => el.getBoundingClientRect().height)).toBeLessThan(80); // a single row
+      await expect(nav.locator("ul")).toBeHidden(); // the inline links are replaced by the menu
+      await expect(nav.getByRole("link", { name: "كلّمنا فواتساب" })).toBeVisible(); // main action stays in the bar
+
+      const button = page.getByRole("button", { name: "القائمة" });
+      await expect(button).toHaveAttribute("aria-expanded", "false");
+      await button.click();
+      const sheet = page.getByRole("dialog");
+      await expect(sheet).toBeVisible();
+      await expect(page.getByRole("button", { name: "سدّ القائمة" })).toHaveAttribute("aria-expanded", "true");
+      expect(await page.evaluate(() => document.documentElement.style.overflow)).toBe("hidden"); // page does not scroll behind
+
+      await page.keyboard.press("Escape");
+      await expect(sheet).toBeHidden();
+      expect(await page.evaluate(() => document.documentElement.style.overflow)).toBe("");
+
+      await button.click();
+      await sheet.getByRole("link", { name: "الخدمات" }).click();
+      await expect(page).toHaveURL(/\/ar\/services$/);
+      await expect(sheet).toBeHidden(); // navigating closes it
+      expect(problems).toEqual([]);
+      await context.close();
+    });
+  }
+
+  test("car brand strip sits after the problem section's closing line and is visible on phones", async ({ browser }) => {
+    const context = await browser.newContext({ viewport: PHONE, hasTouch: true });
+    const page = await context.newPage();
+    await page.goto("/ar");
+    const strip = page.locator('section[aria-labelledby="problem-heading"] [role="group"]');
+    await strip.scrollIntoViewIfNeeded();
+    expect(await strip.evaluate((el) => el.querySelector("div > div:nth-child(2)")!.getBoundingClientRect().height)).toBeGreaterThan(20);
+    await expect(strip.getByText("MERCEDES-BENZ").first()).toBeVisible();
+    await context.close();
+  });
+
+  test("fr phone: language switch inside the sheet keeps the page", async ({ browser }) => {
+    const context = await browser.newContext({ viewport: PHONE, hasTouch: true });
+    const page = await context.newPage();
+    await page.goto("/fr/services");
+    await page.getByRole("button", { name: "Menu" }).click();
+    await page.getByRole("dialog").getByRole("link", { name: "EN", exact: true }).click();
+    await expect(page).toHaveURL(/\/en\/services$/);
+    await context.close();
+  });
 });
 
 test.describe("interactions", () => {

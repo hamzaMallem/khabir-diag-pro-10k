@@ -80,6 +80,8 @@ export default async function LocaleLayout({ children, params }: { children: Rea
           ctaHref={getWhatsAppHref(dict.wa_msg)}
           languageLabel={dict.lang_label}
           pagesLabel={dict.nav_label}
+          menuLabel={dict.nav_menu}
+          closeLabel={dict.nav_close}
           links={links}
         />
         {children}

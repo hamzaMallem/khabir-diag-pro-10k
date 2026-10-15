@@ -116,8 +116,6 @@ export function ServicesSection({ dict }: { dict: Dictionary }) {
     },
   ];
 
-  const brands = ["MERCEDES-BENZ", "BMW", "AUDI", "VOLKSWAGEN", "PORSCHE", "MINI", "SKODA", "SEAT"];
-
   return (
     <section className={`section ${styles.services}`} aria-labelledby="services-heading">
       <div className="wrap">
@@ -142,14 +140,6 @@ export function ServicesSection({ dict }: { dict: Dictionary }) {
             </Reveal>
           ))}
         </div>
-        <Reveal className={styles.brands}>
-          <span className={styles.brandsLabel}>{dict.brands_l}</span>
-          {brands.map((brand) => (
-            <span key={brand} className={styles.brand}>
-              {brand}
-            </span>
-          ))}
-        </Reveal>
       </div>
     </section>
   );

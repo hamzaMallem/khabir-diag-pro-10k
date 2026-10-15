@@ -1,0 +1,198 @@
+.tickerWrapper {
+  margin-top: clamp(40px, 5vw, 60px);
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.5vw, 32px);
+  width: 100%;
+  overflow: hidden;
+}
+
+.labelGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding-inline-end: 18px;
+  border-inline-end: 1px solid var(--line);
+  z-index: 2;
+}
+
+.pulseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulseDot 2.4s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+}
+
+.label {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+:lang(ar) .label {
+  font-size: 14px;
+}
+
+.viewport {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  direction: ltr; /* Keeps hardware coordinate animation deterministic */
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: max-content;
+  animation: scrollMarquee 34s linear infinite;
+  will-change: transform;
+}
+
+.track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.brandCard {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition:
+    background-color 0.25s var(--ease-out),
+    border-color 0.25s var(--ease-out),
+    transform 0.25s var(--ease-out);
+  cursor: default;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.brandCard:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 107, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.brandIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  min-width: 24px;
+  max-width: 54px;
+  color: var(--text-secondary);
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.brandIcon svg {
+  height: 100%;
+  width: auto;
+  max-height: 24px;
+}
+
+.brandCard:hover .brandIcon {
+  color: var(--accent);
+  transform: scale(1.08);
+}
+
+.brandName {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(17px, 1vw + 12px, 22px);
+  letter-spacing: 0.03em;
+  color: #c9d3d6;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.brandCard:hover .brandName {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .tickerWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding-top: 22px;
+  }
+
+  .labelGroup {
+    border-inline-end: none;
+    padding-inline-end: 0;
+  }
+
+  /* In a column, `flex: 1` would collapse the strip to zero height: size it by its content instead. */
+  .viewport {
+    flex: none;
+    width: 100%;
+  }
+
+  .brandCard {
+    padding: 7px 14px;
+    gap: 10px;
+  }
+
+  .brandIcon {
+    height: 20px;
+  }
+
+  .brandIcon svg {
+    max-height: 20px;
+  }
+
+  .brandName {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulseDot {
+    animation: none;
+  }
+
+  /* No motion: the strip becomes a row the visitor can scroll by hand (the viewport scrolls, not the track). */
+  .track {
+    animation: none;
+  }
+
+  .viewport {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}

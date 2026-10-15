@@ -84,6 +84,12 @@ Running record of what has been done and what is next, so a new Claude Code sess
 - Verified: build clean, 35 Playwright tests pass (new: cache + CSP header test); in the browser the video is one request, `video.src` is a `blob:` URL, and a second visit transfers 0 bytes.
 - Not measured: Lighthouse on a throttled real device; worth doing on the live site after deploy.
 
+### 2026-10-15 (evening) — mobile nav + brand ticker
+- **Mobile nav** (`components/layout/Nav.tsx`, breakpoint 960px, `WIDE_QUERY` must match `Nav.module.css`): below 961px the bar is one row (logo, contact button, menu button). Pages and the language switch live in a full-screen sheet (`role="dialog"`, Esc closes, Tab stays inside, page scroll locked, closes on navigation). The contact button used to be hidden under 560px; it is now always in the bar. New keys `nav_menu` / `nav_close` (157 keys per language).
+- **BrandTicker** (written in Antigravity, reviewed and accepted): moved from the services section to the end of the problem section, right after "German cars talk…". Fixes: screen readers heard brand names twice, reduced-motion scrolled the wrong element, zero-offset glow removed, and on phones the strip collapsed to zero height (`flex: 1` in a column).
+- **Not committed on purpose**: 9 unused images dropped in `khabir-next/public/` (Mercedes E63 render, iStock files, `cvsimo-photo`, `bgWebsite`, `service*.png`, a WhatsApp photo of a heater core). Nothing references them, they weigh ~9 MB, and some look like third-party/stock images (licence unknown). Decide which ones are real workshop photos before adding them (optimised, under `public/media`).
+- Tests: 37 pass (new: mobile menu on phone/tablet, language switch in sheet, ticker visible on phones).
+
 ## Next steps (in order)
 
 1. Get from the owner: real workshop photos (about page + hero alternatives).
