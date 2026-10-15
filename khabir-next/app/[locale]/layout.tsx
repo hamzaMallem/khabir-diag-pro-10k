@@ -76,7 +76,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
         <Background />
         <Nav
           locale={locale}
-          ctaLabel={dict.cta}
+          ctaLabel={dict.nav_cta}
           ctaHref={getWhatsAppHref(dict.wa_msg)}
           languageLabel={dict.lang_label}
           pagesLabel={dict.nav_label}

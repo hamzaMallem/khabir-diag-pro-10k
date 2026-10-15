@@ -153,7 +153,7 @@ test.describe("scroll-controlled hero video", () => {
     await expect(page.locator('#top[data-status="failed"]')).toBeVisible({ timeout: 15_000 });
     await scrollHeroTo(page, 0.95);
     await expect(page.getByRole("heading", { name: /La vraie panne/ }).first()).toBeVisible();
-    await expect(page.locator("[data-hero-stage]").getByRole("link", { name: "Diagnostiquer ma voiture" })).toBeVisible();
+    await expect(page.locator("[data-hero-stage]").getByRole("link", { name: "Trouver ma panne sur WhatsApp" })).toBeVisible();
     expect(problems.filter((p) => !/ERR_FAILED|Failed to load resource/.test(p))).toEqual([]);
   });
 
@@ -166,7 +166,7 @@ test.describe("scroll-controlled hero video", () => {
     expect(requests).toEqual([]);
     await expect(page.locator("[data-hero-stage]")).toBeHidden();
     await expect(page.getByRole("heading", { level: 1 })).toContainText("La vraie panne");
-    await expect(page.getByRole("link", { name: "Diagnostiquer ma voiture" }).last()).toBeVisible();
+    await expect(page.getByRole("link", { name: "Trouver ma panne sur WhatsApp" }).last()).toBeVisible();
     await context.close();
   });
 
@@ -215,6 +215,33 @@ test.describe("layout", () => {
         await context.close();
       });
     }
+  }
+
+  // Guards the top bar: page links sit side by side, no bullets or underlines, and the bar never grows past two rows.
+  for (const [name, viewport] of [
+    ["desktop", DESKTOP],
+    ["tablet portrait", TABLET],
+    ["phone portrait", PHONE],
+  ] as const) {
+    test(`ar ${name}: top bar links are one tidy row`, async ({ browser }) => {
+      const context = await browser.newContext({ viewport });
+      const page = await context.newPage();
+      await page.goto("/ar");
+      const links = page.locator("nav ul a");
+      await expect(links).toHaveCount(4);
+      const boxes = await links.evaluateAll((els) =>
+        els.map((el) => {
+          const r = el.getBoundingClientRect();
+          const cs = getComputedStyle(el);
+          return { y: Math.round(r.y), underline: cs.textDecorationLine, bullet: getComputedStyle(el.parentElement!).listStyleType };
+        }),
+      );
+      expect(new Set(boxes.map((b) => b.y)).size).toBe(1); // all on the same line
+      expect(boxes.every((b) => b.underline === "none" && b.bullet === "none")).toBe(true);
+      const navHeight = await page.locator("nav").evaluate((el) => el.getBoundingClientRect().height);
+      expect(navHeight).toBeLessThan(130);
+      await context.close();
+    });
   }
 });
 

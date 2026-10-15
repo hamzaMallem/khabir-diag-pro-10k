@@ -69,6 +69,13 @@ Running record of what has been done and what is next, so a new Claude Code sess
 - **Vercel**: project `khabir-diag-pro-10k` (team `mallemdevs-9140s-projects`) is linked to the GitHub repo and deploys `main` automatically on every push. Production: https://khabir-diag-pro-10k.vercel.app (headers verified live).
 - `site.url` now falls back to Vercel's `VERCEL_PROJECT_PRODUCTION_URL`, so canonical/sitemap/Open Graph use the production domain without any env var (the Vercel connector had no permission to create env vars: 403). Set `NEXT_PUBLIC_SITE_URL` in the Vercel dashboard once a custom domain exists.
 
+### 2026-10-15 — nav hardening, watermark removal, conversion copy
+- **Watermark**: the generator's "Dola AI" stamp (bottom-right of both hero videos and both `*-end.jpg`) removed with ffmpeg `delogo`. `tools/media/encode.sh` now applies it per variant (boxes in `LOGO`); videos re-encoded from `review/` with `encode.sh 1 30`; end images patched in place. If the source videos are ever replaced, re-check the boxes.
+- **Nav**: could not reproduce the "stacked links with bullets" report on the live site (CSS applied correctly), so the bar was hardened instead: explicit row layout and `list-style: none` on `li` + `::marker`; brand shrinks first at 560–1080px so the bar is two rows at most (it was three at ~640px). New short nav button label `nav_cta` (it reused the long hero CTA before).
+- **Copy** (ar/fr/en, 155 keys each): primary CTA is now benefit-led ("Find my fault on WhatsApp" / "Trouver ma panne sur WhatsApp" / "عرف العطب الحقيقي فواتساب"); contact heading "Send the symptom. Get a clear price."; final hero caption states the real-cause promise; services, demo, location, blog headings and meta descriptions reworded. No new guarantees added (only existing promises: written quote before work, no part without proof).
+- Tests: 34 pass (new: top-bar-is-one-row at desktop/tablet/phone; CTA text updated). tsc, lint, build clean.
+- Not done: nothing committed or pushed; real workshop photos still missing.
+
 ## Next steps (in order)
 
 1. Get from the owner: real workshop photos (about page + hero alternatives).

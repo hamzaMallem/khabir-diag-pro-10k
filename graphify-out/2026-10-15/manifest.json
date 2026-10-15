@@ -1,0 +1,1436 @@
+{
+  ".claude/launch.json": {
+    "mtime": 1792013141.7411056,
+    "seen": 1792013348.5334988,
+    "ast_hash": "eab2640cda20fb8c9d64c61ce2857e87",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/scripts/command-metadata.json": {
+    "mtime": 1791700263.1094453,
+    "seen": 1791702046.6625903,
+    "ast_hash": "533063bcdd4e150bf9037bbb1f00402a",
+    "semantic_hash": "533063bcdd4e150bf9037bbb1f00402a"
+  },
+  ".claude/skills/impeccable/scripts/data/font-index-failures.json": {
+    "mtime": 1791700263.111446,
+    "seen": 1791702046.6625953,
+    "ast_hash": "c14048ea4e2b4a062933664822bc0399",
+    "semantic_hash": "c14048ea4e2b4a062933664822bc0399"
+  },
+  ".claude/skills/impeccable/scripts/data/font-index.json": {
+    "mtime": 1791700263.1134455,
+    "seen": 1791702046.6625986,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/scripts/impeccable": {
+    "mtime": 1791700263.113993,
+    "seen": 1791702046.6626015,
+    "ast_hash": "955cbafd2f055911adc7f56cab0efc47",
+    "semantic_hash": "955cbafd2f055911adc7f56cab0efc47"
+  },
+  ".claude/skills/impeccable/scripts/live-browser-dom.js": {
+    "mtime": 1791700263.114501,
+    "seen": 1791702046.6626043,
+    "ast_hash": "ee3a7ad3a17ec6b463aa40e1d412f660",
+    "semantic_hash": "ee3a7ad3a17ec6b463aa40e1d412f660"
+  },
+  ".claude/skills/impeccable/scripts/live-browser-ignores.js": {
+    "mtime": 1791700263.114501,
+    "seen": 1791702046.6626077,
+    "ast_hash": "dd05503f92e1cf9b3feedbb19070f59e",
+    "semantic_hash": "dd05503f92e1cf9b3feedbb19070f59e"
+  },
+  ".claude/skills/impeccable/scripts/live-browser-session.js": {
+    "mtime": 1791700263.115509,
+    "seen": 1791702046.6626108,
+    "ast_hash": "a24c3e240af5d533f8bdc1daf364aa65",
+    "semantic_hash": "a24c3e240af5d533f8bdc1daf364aa65"
+  },
+  ".claude/skills/impeccable/scripts/live-browser.js": {
+    "mtime": 1791700264.1852105,
+    "seen": 1791702046.6626134,
+    "ast_hash": "e8ac72ca9b2ef9b834e2b75b913e3ca6",
+    "semantic_hash": "e8ac72ca9b2ef9b834e2b75b913e3ca6"
+  },
+  ".claude/skills/impeccable/scripts/modern-screenshot.umd.js": {
+    "mtime": 1791700264.1852105,
+    "seen": 1791702046.6626163,
+    "ast_hash": "4fe5f9e490ab4f107afc707d7eafc819",
+    "semantic_hash": "4fe5f9e490ab4f107afc707d7eafc819"
+  },
+  "khabir-next/app/[locale]/layout.tsx": {
+    "mtime": 1792013042.541401,
+    "seen": 1792013348.5353842,
+    "ast_hash": "b75ff87c5ba6a13fa8ac91dc55f42ec4",
+    "semantic_hash": ""
+  },
+  "khabir-next/app/[locale]/page.tsx": {
+    "mtime": 1792012956.681104,
+    "seen": 1792013348.5353868,
+    "ast_hash": "1d817c40aa93818a72ccdaf406cb83c3",
+    "semantic_hash": ""
+  },
+  "khabir-next/app/robots.ts": {
+    "mtime": 1791701520.592804,
+    "seen": 1791702046.662625,
+    "ast_hash": "19e066256a648e78c61e29b4c4c61940",
+    "semantic_hash": "19e066256a648e78c61e29b4c4c61940"
+  },
+  "khabir-next/app/sitemap.ts": {
+    "mtime": 1792013094.3725002,
+    "seen": 1792013348.5355744,
+    "ast_hash": "afd5f73af66bfc2189d3bfed30b6f50c",
+    "semantic_hash": ""
+  },
+  "khabir-next/components/hero/HeroSection.tsx": {
+    "mtime": 1791701591.5024736,
+    "seen": 1791702046.662629,
+    "ast_hash": "de8d7ef9ba2ca1251887104924eb73fe",
+    "semantic_hash": "de8d7ef9ba2ca1251887104924eb73fe"
+  },
+  "khabir-next/components/hero/ScrollHero.tsx": {
+    "mtime": 1791701630.2806828,
+    "seen": 1791702046.6626306,
+    "ast_hash": "293173787dd21d8f165fdf709ff8a280",
+    "semantic_hash": "293173787dd21d8f165fdf709ff8a280"
+  },
+  "khabir-next/components/layout/Background.tsx": {
+    "mtime": 1791701203.6847835,
+    "seen": 1791702046.6626327,
+    "ast_hash": "9a74700020a4c12b1f5fd22c0234a17b",
+    "semantic_hash": "9a74700020a4c12b1f5fd22c0234a17b"
+  },
+  "khabir-next/components/layout/Footer.tsx": {
+    "mtime": 1792013068.91317,
+    "seen": 1792013348.5361567,
+    "ast_hash": "246cc22597ba7f7b95b96d7fc3373356",
+    "semantic_hash": ""
+  },
+  "khabir-next/components/layout/Nav.tsx": {
+    "mtime": 1792012999.7693841,
+    "seen": 1792013348.536159,
+    "ast_hash": "d80c1933a9a83ee94b13194f45f32791",
+    "semantic_hash": ""
+  },
+  "khabir-next/components/sections/ContactSection.tsx": {
+    "mtime": 1792014549.8847895,
+    "seen": 1792014953.285206,
+    "ast_hash": "d8cab400783095a70766382e2f7b558a",
+    "semantic_hash": ""
+  },
+  "khabir-next/components/sections/DiagnosticDemo.tsx": {
+    "mtime": 1791701591.5024736,
+    "seen": 1791702046.66264,
+    "ast_hash": "4697392796905055e08708c0bd61c4f0",
+    "semantic_hash": "4697392796905055e08708c0bd61c4f0"
+  },
+  "khabir-next/components/sections/FaqSection.tsx": {
+    "mtime": 1791701428.2154634,
+    "seen": 1791702046.662642,
+    "ast_hash": "40bd284070edfe751f720745db3adb42",
+    "semantic_hash": "40bd284070edfe751f720745db3adb42"
+  },
+  "khabir-next/components/sections/JsonLd.tsx": {
+    "mtime": 1792014576.3792188,
+    "seen": 1792014953.2856557,
+    "ast_hash": "e59a23e58931f50458509ac781332333",
+    "semantic_hash": ""
+  },
+  "khabir-next/components/sections/MethodSection.tsx": {
+    "mtime": 1791701416.6101968,
+    "seen": 1791702046.662647,
+    "ast_hash": "93df24229afbe5c7bd566a569db46834",
+    "semantic_hash": "93df24229afbe5c7bd566a569db46834"
+  },
+  "khabir-next/components/sections/ProblemSection.tsx": {
+    "mtime": 1791701411.9145117,
+    "seen": 1791702046.6626492,
+    "ast_hash": "cb3ab22fd4a8a74ad2952e04499448dd",
+    "semantic_hash": "cb3ab22fd4a8a74ad2952e04499448dd"
+  },
+  "khabir-next/components/sections/PromisesSection.tsx": {
+    "mtime": 1791701422.2152002,
+    "seen": 1791702046.6626508,
+    "ast_hash": "ddfbb13649f59e3ad02bbdd3ba8313f2",
+    "semantic_hash": "ddfbb13649f59e3ad02bbdd3ba8313f2"
+  },
+  "khabir-next/components/sections/ServicesSection.tsx": {
+    "mtime": 1791701434.2879076,
+    "seen": 1791702046.6626532,
+    "ast_hash": "83c644866d07b7f28f60b8029ca4cbb5",
+    "semantic_hash": "83c644866d07b7f28f60b8029ca4cbb5"
+  },
+  "khabir-next/components/ui/Button.tsx": {
+    "mtime": 1791701017.836463,
+    "seen": 1791702046.6626549,
+    "ast_hash": "e9ef0cc67d8614d0124518ad5537b4aa",
+    "semantic_hash": "e9ef0cc67d8614d0124518ad5537b4aa"
+  },
+  "khabir-next/components/ui/Reveal.tsx": {
+    "mtime": 1791701015.4967954,
+    "seen": 1791702046.662657,
+    "ast_hash": "f9d0d35ab58736bc40f15dc622930b49",
+    "semantic_hash": "f9d0d35ab58736bc40f15dc622930b49"
+  },
+  "khabir-next/config/hero.ts": {
+    "mtime": 1791700824.607306,
+    "seen": 1791702046.6626592,
+    "ast_hash": "d864a90efca33f28d14d8c6b1db4f753",
+    "semantic_hash": "d864a90efca33f28d14d8c6b1db4f753"
+  },
+  "khabir-next/config/site.ts": {
+    "mtime": 1792014413.5456004,
+    "seen": 1792014953.2869675,
+    "ast_hash": "bb781a626b5fec17f7f31a1ea5079dfa",
+    "semantic_hash": ""
+  },
+  "khabir-next/eslint.config.mjs": {
+    "mtime": 1791700326.5972724,
+    "seen": 1791702046.6626627,
+    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
+    "semantic_hash": "dfa1f5f6a7037bf39dc510f30b180002"
+  },
+  "khabir-next/hooks/useHeroScrub.ts": {
+    "mtime": 1791701166.9573016,
+    "seen": 1791702046.6626647,
+    "ast_hash": "63132f41cd120eaf60fddc236f21b773",
+    "semantic_hash": "63132f41cd120eaf60fddc236f21b773"
+  },
+  "khabir-next/i18n/config.ts": {
+    "mtime": 1791700808.5507257,
+    "seen": 1791702046.6626666,
+    "ast_hash": "6b675e55470fbb8e833cb778d69b8005",
+    "semantic_hash": "6b675e55470fbb8e833cb778d69b8005"
+  },
+  "khabir-next/i18n/dictionaries.ts": {
+    "mtime": 1791700808.5795302,
+    "seen": 1791702046.6626685,
+    "ast_hash": "411bdd873faeca6329910e23d583febf",
+    "semantic_hash": "411bdd873faeca6329910e23d583febf"
+  },
+  "khabir-next/lib/captions.ts": {
+    "mtime": 1791700875.2380457,
+    "seen": 1791702046.6626704,
+    "ast_hash": "d147afe6bc7640df67ef7c5da6a5f05b",
+    "semantic_hash": "d147afe6bc7640df67ef7c5da6a5f05b"
+  },
+  "khabir-next/lib/localeCookie.ts": {
+    "mtime": 1791701591.4115012,
+    "seen": 1791702046.662672,
+    "ast_hash": "0ec10138bb0d1bd55f8515ac280c3c21",
+    "semantic_hash": "0ec10138bb0d1bd55f8515ac280c3c21"
+  },
+  "khabir-next/lib/math.ts": {
+    "mtime": 1791700808.6946273,
+    "seen": 1791702046.6626742,
+    "ast_hash": "a69b5e6f3e25e75973c1de2af9fb0865",
+    "semantic_hash": "a69b5e6f3e25e75973c1de2af9fb0865"
+  },
+  "khabir-next/lib/whatsapp.ts": {
+    "mtime": 1791700808.6629863,
+    "seen": 1791702046.6626759,
+    "ast_hash": "d9e8ddd49882cf2beaa4be0547d4003d",
+    "semantic_hash": "d9e8ddd49882cf2beaa4be0547d4003d"
+  },
+  "khabir-next/messages/ar.json": {
+    "mtime": 1792014432.30077,
+    "seen": 1792014953.2892706,
+    "ast_hash": "b958d8992b21ffc3a153c88bb2ad69a6",
+    "semantic_hash": ""
+  },
+  "khabir-next/messages/en.json": {
+    "mtime": 1792014449.1555567,
+    "seen": 1792014953.2892742,
+    "ast_hash": "d04b37d27b60a7a13bcbac6ba3af91d6",
+    "semantic_hash": ""
+  },
+  "khabir-next/messages/fr.json": {
+    "mtime": 1792014435.8783374,
+    "seen": 1792014953.2892764,
+    "ast_hash": "00ff9241f7415a02c70329c83cc8e433",
+    "semantic_hash": ""
+  },
+  "khabir-next/next.config.ts": {
+    "mtime": 1792012615.7314413,
+    "seen": 1792013348.539644,
+    "ast_hash": "33e68c33d6348aede9a4fdbca6bf1d32",
+    "semantic_hash": ""
+  },
+  "khabir-next/package.json": {
+    "mtime": 1792012591.2379284,
+    "seen": 1792013348.5396457,
+    "ast_hash": "70bf3b23579e2012c1aa050441537c6d",
+    "semantic_hash": ""
+  },
+  "khabir-next/proxy.ts": {
+    "mtime": 1791700808.6077418,
+    "seen": 1791702046.6626878,
+    "ast_hash": "5720da6e8438f18adbd7a14cb1e938b9",
+    "semantic_hash": "5720da6e8438f18adbd7a14cb1e938b9"
+  },
+  "khabir-next/tests/scrub-check.mjs": {
+    "mtime": 1791701679.535558,
+    "seen": 1791702046.6626897,
+    "ast_hash": "501f9e88e6c4a04b6cbe741e0f88293e",
+    "semantic_hash": "501f9e88e6c4a04b6cbe741e0f88293e"
+  },
+  "khabir-next/tsconfig.json": {
+    "mtime": 1791700327.244673,
+    "seen": 1791702046.6626914,
+    "ast_hash": "02fc19ad21338c2ab820a70136310db4",
+    "semantic_hash": "02fc19ad21338c2ab820a70136310db4"
+  },
+  "skills-lock.json": {
+    "mtime": 1792012309.3605838,
+    "seen": 1792013348.5404882,
+    "ast_hash": "0e28e0c4843069c185a531e3873b2579",
+    "semantic_hash": ""
+  },
+  "tools/baseline/capture.mjs": {
+    "mtime": 1791453272.9560142,
+    "seen": 1791702046.6626954,
+    "ast_hash": "335684c0928f1000aa072ac6cd6bae99",
+    "semantic_hash": "335684c0928f1000aa072ac6cd6bae99"
+  },
+  "tools/baseline/package.json": {
+    "mtime": 1791453196.401698,
+    "seen": 1791702046.6626973,
+    "ast_hash": "5f2180c78b8d5ab5fe245fa4a4cdf9a1",
+    "semantic_hash": "5f2180c78b8d5ab5fe245fa4a4cdf9a1"
+  },
+  "tools/media/encode.sh": {
+    "mtime": 1791700283.7373402,
+    "seen": 1791702046.662699,
+    "ast_hash": "b5603133f9f76abda223fe33c70f0e72",
+    "semantic_hash": "b5603133f9f76abda223fe33c70f0e72"
+  },
+  "docs/claude-code-nextjs-dual-video-prompt.md": {
+    "mtime": 1791699834.772792,
+    "seen": 1791702046.662701,
+    "ast_hash": "29584061f149bf8cb8f7cf24853707ad",
+    "semantic_hash": "29584061f149bf8cb8f7cf24853707ad"
+  },
+  "docs/design-package.md": {
+    "mtime": 1791404360.5228245,
+    "seen": 1791702046.6627023,
+    "ast_hash": "b48abf924c7c29b3632aa26b0346b205",
+    "semantic_hash": "b48abf924c7c29b3632aa26b0346b205"
+  },
+  "docs/hero-hood-opening-prompts.md": {
+    "mtime": 1791452166.6864977,
+    "seen": 1791702046.6627042,
+    "ast_hash": "393d13ef16c73df7867a14becb6f2584",
+    "semantic_hash": "393d13ef16c73df7867a14becb6f2584"
+  },
+  "docs/nextjs-migration-plan.md": {
+    "mtime": 1791451801.0840828,
+    "seen": 1791702046.662706,
+    "ast_hash": "9ddda789287c535325cb83593206f705",
+    "semantic_hash": "9ddda789287c535325cb83593206f705"
+  },
+  "docs/prompts.md": {
+    "mtime": 1791409639.211995,
+    "seen": 1791702046.6627078,
+    "ast_hash": "234af5b4812bc3f4e8574ca5a2320b42",
+    "semantic_hash": "234af5b4812bc3f4e8574ca5a2320b42"
+  },
+  "khabir-diagnostic-auto-pro/index.html": {
+    "mtime": 1791411141.9068713,
+    "seen": 1791702046.6627095,
+    "ast_hash": "eace4522c352ffaf7e0746606e5b6134",
+    "semantic_hash": "eace4522c352ffaf7e0746606e5b6134"
+  },
+  "khabir-next/AGENTS.md": {
+    "mtime": 1791700452.662698,
+    "seen": 1791702046.662712,
+    "ast_hash": "c98dbebb744eadc1acc4b9f58bfe0f42",
+    "semantic_hash": "c98dbebb744eadc1acc4b9f58bfe0f42"
+  },
+  "khabir-next/README.md": {
+    "mtime": 1791702419.6156878,
+    "seen": 1792013348.5430834,
+    "ast_hash": "6abc0a3fc680b50f7b4e9d38a0e9b3e5",
+    "semantic_hash": ""
+  },
+  "khabir-diagnostic-auto-pro/assets/hero-ending.jpg": {
+    "mtime": 1791409187.5036573,
+    "seen": 1791702046.6627157,
+    "ast_hash": "c1339b0d98145de00f811a55b9e3d367",
+    "semantic_hash": "c1339b0d98145de00f811a55b9e3d367"
+  },
+  "khabir-diagnostic-auto-pro/assets/hero-poster.jpg": {
+    "mtime": 1791409187.328521,
+    "seen": 1791702046.6627173,
+    "ast_hash": "017182a20b4b87dcba12f04397770250",
+    "semantic_hash": "017182a20b4b87dcba12f04397770250"
+  },
+  "khabir-diagnostic-auto-pro/assets/step-1.jpg": {
+    "mtime": 1791410228.2627256,
+    "seen": 1791702046.662719,
+    "ast_hash": "04b9aeb016533622af2a0c8f2aff1645",
+    "semantic_hash": "04b9aeb016533622af2a0c8f2aff1645"
+  },
+  "khabir-diagnostic-auto-pro/assets/step-2.jpg": {
+    "mtime": 1791410228.444123,
+    "seen": 1791702046.6627207,
+    "ast_hash": "c5f6ef60c6eb1fa31f8a164684d57ee3",
+    "semantic_hash": "c5f6ef60c6eb1fa31f8a164684d57ee3"
+  },
+  "khabir-diagnostic-auto-pro/assets/step-3.jpg": {
+    "mtime": 1791410228.6068172,
+    "seen": 1791702046.6627226,
+    "ast_hash": "a39e4720b72e9d99415d4563c2001e3f",
+    "semantic_hash": "a39e4720b72e9d99415d4563c2001e3f"
+  },
+  "khabir-next/public/media/hero-desktop-end.jpg": {
+    "mtime": 1791700771.7519512,
+    "seen": 1791702046.6627243,
+    "ast_hash": "a73b36e68e672a278e3104a80b729ad7",
+    "semantic_hash": "a73b36e68e672a278e3104a80b729ad7"
+  },
+  "khabir-next/public/media/hero-desktop-poster.jpg": {
+    "mtime": 1791700491.585105,
+    "seen": 1791702046.6627264,
+    "ast_hash": "cda16f757a93b25965af3c18a68c4682",
+    "semantic_hash": "cda16f757a93b25965af3c18a68c4682"
+  },
+  "khabir-next/public/media/hero-mobile-end.jpg": {
+    "mtime": 1791700771.8438056,
+    "seen": 1791702046.6627283,
+    "ast_hash": "a44afd58f84c557c0ff66ad240e2cf16",
+    "semantic_hash": "a44afd58f84c557c0ff66ad240e2cf16"
+  },
+  "khabir-next/public/media/hero-mobile-poster.jpg": {
+    "mtime": 1791700496.825122,
+    "seen": 1791702046.66273,
+    "ast_hash": "ad2c1a4ea88e0e0a60d140277ce8d1b5",
+    "semantic_hash": "ad2c1a4ea88e0e0a60d140277ce8d1b5"
+  },
+  "khabir-diagnostic-auto-pro/assets/hero-scrub.mp4": {
+    "mtime": 1791409187.129525,
+    "seen": 1791702046.662732,
+    "ast_hash": "45a83ceeae79dfd9e1b4b67e85ce2db1",
+    "semantic_hash": "45a83ceeae79dfd9e1b4b67e85ce2db1"
+  },
+  "khabir-next/public/media/hero-desktop.mp4": {
+    "mtime": 1791700491.4024258,
+    "seen": 1791702046.6627336,
+    "ast_hash": "566430ab5805785f73a8c9591ebbc914",
+    "semantic_hash": "566430ab5805785f73a8c9591ebbc914"
+  },
+  "khabir-next/public/media/hero-mobile.mp4": {
+    "mtime": 1791700496.6726882,
+    "seen": 1791702046.6627357,
+    "ast_hash": "1b637ca1e97243b4d8653ee72cce1cf6",
+    "semantic_hash": "1b637ca1e97243b4d8653ee72cce1cf6"
+  },
+  "khabir-next/playwright.config.ts": {
+    "mtime": 1791701998.947825,
+    "seen": 1791702496.7989433,
+    "ast_hash": "25b759547941fd1ec97b1280e08f8089",
+    "semantic_hash": "25b759547941fd1ec97b1280e08f8089"
+  },
+  "khabir-next/tests/site.spec.ts": {
+    "mtime": 1792014644.671373,
+    "seen": 1792014953.2908313,
+    "ast_hash": "ffb1a7fc15d0d5a96279f63f1a501502",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1791702268.394445,
+    "seen": 1791702496.798951,
+    "ast_hash": "e1c2001d0dde7ec8c5bdfeb9205fa3a8",
+    "semantic_hash": "e1c2001d0dde7ec8c5bdfeb9205fa3a8"
+  },
+  "docs/PROJECT_LOG.md": {
+    "mtime": 1792014932.8939054,
+    "seen": 1792014953.3217478,
+    "ast_hash": "b447d8be02053633c993219e83683cf4",
+    "semantic_hash": ""
+  },
+  "docs/beginner-maintenance-guide.md": {
+    "mtime": 1791702389.5024688,
+    "seen": 1791702496.7989545,
+    "ast_hash": "055015c4d291c73c1ac88c8abd25107c",
+    "semantic_hash": "055015c4d291c73c1ac88c8abd25107c"
+  },
+  "docs/nextjs-rebuild-plan.md": {
+    "mtime": 1791702385.7456686,
+    "seen": 1791702496.798956,
+    "ast_hash": "86fcf875a022055e81197595a9ec6231",
+    "semantic_hash": "86fcf875a022055e81197595a9ec6231"
+  },
+  "khabir-next/app/[locale]/about/page.tsx": {
+    "mtime": 1792014629.0279274,
+    "seen": 1792014953.282638,
+    "ast_hash": "38d06f7b4535e80824de28d9ab5ca42e",
+    "semantic_hash": ""
+  },
+  "khabir-next/app/[locale]/blog/[slug]/page.tsx": {
+    "mtime": 1792012883.6092205,
+    "seen": 1792013348.535378,
+    "ast_hash": "6cdc0b9c95db6c19b28121dc40b026e3",
+    "semantic_hash": ""
+  },
+  "khabir-next/app/[locale]/blog/page.tsx": {
+    "mtime": 1792012880.0062275,
+    "seen": 1792013348.5353804,
+    "ast_hash": "c0914ff0bb87256fb9c37b5cef049083",
+    "semantic_hash": ""
+  },
+  "khabir-next/app/[locale]/services/page.tsx": {
+    "mtime": 1792014597.9715774,
+    "seen": 1792014953.2834039,
+    "ast_hash": "c323ef96a411e8ddbd451f9aec040ec0",
+    "semantic_hash": ""
+  },
+  "khabir-next/components/pages/PageParts.tsx": {
+    "mtime": 1792012782.4788172,
+    "seen": 1792013348.5361621,
+    "ast_hash": "43a9e0c72a4046c325bf8fac552ae101",
+    "semantic_hash": ""
+  },
+  "khabir-next/components/sections/LocationSection.tsx": {
+    "mtime": 1792014672.4850917,
+    "seen": 1792014953.2856593,
+    "ast_hash": "4e17915ae5ef0ac38ddde9f5e82bf3ae",
+    "semantic_hash": ""
+  },
+  "khabir-next/lib/blog.ts": {
+    "mtime": 1792012649.8368442,
+    "seen": 1792013348.5389626,
+    "ast_hash": "bc8c1d05663455bd28a7b2d852586c60",
+    "semantic_hash": ""
+  },
+  "khabir-next/lib/pageMetadata.ts": {
+    "mtime": 1792012800.213145,
+    "seen": 1792013348.5394623,
+    "ast_hash": "962bbaf83b93057964ac3781c0d6cda3",
+    "semantic_hash": ""
+  },
+  "khabir-next/mdx-components.tsx": {
+    "mtime": 1792012646.4073148,
+    "seen": 1792013348.539631,
+    "ast_hash": "401ef4a9e6ce8839ebcd77feaaa77644",
+    "semantic_hash": ""
+  },
+  ".claude/agents/impeccable-asset-producer.md": {
+    "mtime": 1791700264.1862123,
+    "seen": 1792013348.5409937,
+    "ast_hash": "44f31f606c48dbec4cc51500d61fc554",
+    "semantic_hash": ""
+  },
+  ".claude/agents/impeccable-documenter.md": {
+    "mtime": 1791700264.1862123,
+    "seen": 1792013348.540996,
+    "ast_hash": "594bc0abaeda140107638c83513d83b9",
+    "semantic_hash": ""
+  },
+  ".claude/agents/impeccable-finish-reviewer.md": {
+    "mtime": 1791700264.1872113,
+    "seen": 1792013348.540998,
+    "ast_hash": "9ea46d4a32bc210af34937b357942867",
+    "semantic_hash": ""
+  },
+  ".claude/agents/impeccable-manual-edit-applier.md": {
+    "mtime": 1791700264.1872113,
+    "seen": 1792013348.5409997,
+    "ast_hash": "7d184b03069620576a3368fb14d93a64",
+    "semantic_hash": ""
+  },
+  ".claude/skills/animate/RECIPES.md": {
+    "mtime": 1791700222.8409514,
+    "seen": 1792013348.541002,
+    "ast_hash": "278b01cdc80a6ec30b97e35f2e046c28",
+    "semantic_hash": ""
+  },
+  ".claude/skills/animate/SKILL.md": {
+    "mtime": 1791700222.8419533,
+    "seen": 1792013348.5410037,
+    "ast_hash": "f9a8ba37921b62c111e7d0fd325a5ec7",
+    "semantic_hash": ""
+  },
+  ".claude/skills/break-ui/CATALOG.md": {
+    "mtime": 1791700222.8459516,
+    "seen": 1792013348.5410058,
+    "ast_hash": "9c139cdf967d077550e8695ac7d2229f",
+    "semantic_hash": ""
+  },
+  ".claude/skills/break-ui/SKILL.md": {
+    "mtime": 1791700222.846981,
+    "seen": 1792013348.5410075,
+    "ast_hash": "3704bbee3e3d51ec2ba0f357c12e9333",
+    "semantic_hash": ""
+  },
+  ".claude/skills/design-taste-frontend/SKILL.md": {
+    "mtime": 1791700232.2251117,
+    "seen": 1792013348.5410094,
+    "ast_hash": "648c8bf98f84fbe7f14bf2da035c57fe",
+    "semantic_hash": ""
+  },
+  ".claude/skills/emil-design-eng/SKILL.md": {
+    "mtime": 1791700222.8479521,
+    "seen": 1792013348.541011,
+    "ast_hash": "f1fd6a7bc856a0615044eb2a4854cf02",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/SKILL.md": {
+    "mtime": 1791700263.0840755,
+    "seen": 1792013348.5410128,
+    "ast_hash": "3ed3bc780a665265f68408e4411b0158",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/adapt.md": {
+    "mtime": 1791700263.0860772,
+    "seen": 1792013348.5410144,
+    "ast_hash": "008d34a8b21fdedcc279ccbfd1596eec",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/adapt.native.md": {
+    "mtime": 1791700263.0870755,
+    "seen": 1792013348.541016,
+    "ast_hash": "83199ca5ed98a15fe6951d5485b7cfa8",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/android.md": {
+    "mtime": 1791700263.0870755,
+    "seen": 1792013348.5410178,
+    "ast_hash": "18f5d94b2c51ac3bfede3b209660bbb5",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/animate.md": {
+    "mtime": 1791700263.0870755,
+    "seen": 1792013348.5410194,
+    "ast_hash": "03c9f7615f5d3c10bf57c1aef1ec9882",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/audit.md": {
+    "mtime": 1791700263.0880759,
+    "seen": 1792013348.541021,
+    "ast_hash": "8f344ff26b4978f17e31d18c8176ff26",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/audit.native.md": {
+    "mtime": 1791700263.0890765,
+    "seen": 1792013348.5410228,
+    "ast_hash": "2e77341f171a3b258b8d7e6b086b0ddc",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/bolder.md": {
+    "mtime": 1791700263.0890765,
+    "seen": 1792013348.5410242,
+    "ast_hash": "6e4a0e724e7ccf1fa38bbf51a6f7d6a0",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/clarify.md": {
+    "mtime": 1791700263.090075,
+    "seen": 1792013348.541026,
+    "ast_hash": "3f9b6ded202ec0b912807451daaf1d5c",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/colorize.md": {
+    "mtime": 1791700263.090075,
+    "seen": 1792013348.541028,
+    "ast_hash": "99e051670d4153052b96ee844008d012",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/component-review.md": {
+    "mtime": 1791700263.090075,
+    "seen": 1792013348.5410297,
+    "ast_hash": "0cf4ac58975593d69d76e5e5ebe70354",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/craft-floor.md": {
+    "mtime": 1791700263.0910733,
+    "seen": 1792013348.5410314,
+    "ast_hash": "cdc54a0514fe95ecde3fb0cb889a5376",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/craft.md": {
+    "mtime": 1791700263.0910733,
+    "seen": 1792013348.541033,
+    "ast_hash": "9075911f45c58c15a720f8188b2738f4",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/critique.md": {
+    "mtime": 1791700263.092075,
+    "seen": 1792013348.5410345,
+    "ast_hash": "80b81d8525c40d989b646d093ffc92d2",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/degraded/asset-producer.md": {
+    "mtime": 1791700263.0930736,
+    "seen": 1792013348.5410366,
+    "ast_hash": "fb453bd0cab9030596a6551d7d872aa5",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/degraded/documenter.md": {
+    "mtime": 1791700263.0940752,
+    "seen": 1792013348.541038,
+    "ast_hash": "a38215374db267ad2be047a2a58cc816",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/degraded/finish-reviewer.md": {
+    "mtime": 1791700263.0940752,
+    "seen": 1792013348.54104,
+    "ast_hash": "8bf8914a9b4ab0ccfac44ebf3ae4444d",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/degraded/manual-edit-applier.md": {
+    "mtime": 1791700263.0940752,
+    "seen": 1792013348.5410416,
+    "ast_hash": "1652cf7a403f11f4d57382e5ccec6999",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/delight.md": {
+    "mtime": 1791700263.095075,
+    "seen": 1792013348.5410433,
+    "ast_hash": "e10166bb38cadd52ee69fb78226e1322",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/distill.md": {
+    "mtime": 1791700263.095075,
+    "seen": 1792013348.5410447,
+    "ast_hash": "2e49b01921563d71b09a12f3fec9d437",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/doctor.md": {
+    "mtime": 1791700263.0960746,
+    "seen": 1792013348.5410464,
+    "ast_hash": "8349c6c510c852ebd1ef659cf8536750",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/document.md": {
+    "mtime": 1791700263.097074,
+    "seen": 1792013348.5410478,
+    "ast_hash": "f567a81a01ec2dcca9243aaa09bb8d01",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/extract.md": {
+    "mtime": 1791700263.097074,
+    "seen": 1792013348.5410492,
+    "ast_hash": "d20662216dd9198edc2cdc67d0359743",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/generate.md": {
+    "mtime": 1791700263.097074,
+    "seen": 1792013348.5410511,
+    "ast_hash": "b5be2707c428e4245f2179b293fd8dfb",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/harden.md": {
+    "mtime": 1791700263.0980744,
+    "seen": 1792013348.5410526,
+    "ast_hash": "d392c4b68672941066471883559ade8f",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/hooks.md": {
+    "mtime": 1791700263.0980744,
+    "seen": 1792013348.5410542,
+    "ast_hash": "d46a108a264c653dc01be5616fb2226f",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/init.md": {
+    "mtime": 1791700263.0990748,
+    "seen": 1792013348.541056,
+    "ast_hash": "90892a72afe6b205b9de09bdd81321eb",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/ios.md": {
+    "mtime": 1791700263.0990748,
+    "seen": 1792013348.5410578,
+    "ast_hash": "a8f56b5c246ad44e142853ef59a19039",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/layout.md": {
+    "mtime": 1791700263.0990748,
+    "seen": 1792013348.5410593,
+    "ast_hash": "47a23724d1b8f043665a4e5612d13481",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/live-setup.md": {
+    "mtime": 1791700263.1000755,
+    "seen": 1792013348.5410612,
+    "ast_hash": "4ed7527f994917e276df53171b1d9034",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/live.md": {
+    "mtime": 1791700263.1010764,
+    "seen": 1792013348.5410624,
+    "ast_hash": "f260c561a9bc479bfe64e3d01ef61730",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/mode-operate.md": {
+    "mtime": 1791700263.1010764,
+    "seen": 1792013348.5410643,
+    "ast_hash": "bf63bc740b342576279715f35922daad",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/mode-persuade.md": {
+    "mtime": 1791700263.102077,
+    "seen": 1792013348.5410657,
+    "ast_hash": "9536e656c3fab5a8d85f1dcde6df45aa",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/mode-read.md": {
+    "mtime": 1791700263.102077,
+    "seen": 1792013348.5410674,
+    "ast_hash": "09353e7df8b71096238a1d18c6fbfe44",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/new-work.md": {
+    "mtime": 1791700263.1029682,
+    "seen": 1792013348.5410688,
+    "ast_hash": "a53a9b3442a49c90b73a5dcd05fd04a8",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/onboard.md": {
+    "mtime": 1791700263.1034777,
+    "seen": 1792013348.5410707,
+    "ast_hash": "7095aaea9e2994e37afb3cf1743bc092",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/operate.md": {
+    "mtime": 1791700263.1034777,
+    "seen": 1792013348.5410721,
+    "ast_hash": "53a569b985749058f7b178a32e0a157f",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/optimize.md": {
+    "mtime": 1791700263.104488,
+    "seen": 1792013348.541074,
+    "ast_hash": "6c8dd78b1e66f0bb71ef6284b062bb4c",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/overdrive.md": {
+    "mtime": 1791700263.104488,
+    "seen": 1792013348.5410757,
+    "ast_hash": "a9ea1b7446513bf8bdf7641679facfe6",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/polish.md": {
+    "mtime": 1791700263.104488,
+    "seen": 1792013348.5410776,
+    "ast_hash": "85a66fe58fdf6e1f353d27486ac25c67",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/quieter.md": {
+    "mtime": 1791700263.1054897,
+    "seen": 1792013348.5410788,
+    "ast_hash": "615792c6a96fd636fbec7218fc2510c1",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/region-map.md": {
+    "mtime": 1791700263.106488,
+    "seen": 1792013348.5410805,
+    "ast_hash": "196ae3d6b3c878bf6ed8228aee79e9fa",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/routing.md": {
+    "mtime": 1791700263.106488,
+    "seen": 1792013348.5410824,
+    "ast_hash": "b64946650da7c7136d8932923632ed81",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/shape.md": {
+    "mtime": 1791700263.1069293,
+    "seen": 1792013348.541084,
+    "ast_hash": "ecf5345d56452d10cd2c9203a7512704",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/typeset.md": {
+    "mtime": 1791700263.1074355,
+    "seen": 1792013348.5410857,
+    "ast_hash": "964697bac91f691be2b5f7440417f04d",
+    "semantic_hash": ""
+  },
+  ".claude/skills/impeccable/reference/visualize.md": {
+    "mtime": 1791700263.1074355,
+    "seen": 1792013348.5410874,
+    "ast_hash": "b37e9b7e4d73990bdf309210081ffdef",
+    "semantic_hash": ""
+  },
+  ".claude/skills/review-animations/SKILL.md": {
+    "mtime": 1791700222.8538265,
+    "seen": 1792013348.5410893,
+    "ast_hash": "376ae64dc8f6a7fa0f48bc46c3389012",
+    "semantic_hash": ""
+  },
+  ".claude/skills/review-animations/STANDARDS.md": {
+    "mtime": 1791700222.8538265,
+    "seen": 1792013348.541091,
+    "ast_hash": "87d07efe01db0af87187e601f707198f",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/AGENTS.md": {
+    "mtime": 1792012309.0325162,
+    "seen": 1792013348.5410929,
+    "ast_hash": "f2639073a4b0e835bed60d37c6fd41f2",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/README.md": {
+    "mtime": 1792012309.0325162,
+    "seen": 1792013348.541095,
+    "ast_hash": "ea0b87a642d12567a80424f12365a934",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/SKILL.md": {
+    "mtime": 1792012309.0335093,
+    "seen": 1792013348.541097,
+    "ast_hash": "f196f239081f4f193ccf785e11efb85f",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/_sections.md": {
+    "mtime": 1792012309.034511,
+    "seen": 1792013348.5410986,
+    "ast_hash": "2e0313063b1c0e4f2aa9cfde7bc73321",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/_template.md": {
+    "mtime": 1792012309.0356677,
+    "seen": 1792013348.5411003,
+    "ast_hash": "83904a5210a1031a1a4dfdde0f49c088",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/advanced-effect-event-deps.md": {
+    "mtime": 1792012309.036666,
+    "seen": 1792013348.5411022,
+    "ast_hash": "d505719c2c940fe7484021947538027b",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/advanced-event-handler-refs.md": {
+    "mtime": 1792012309.036666,
+    "seen": 1792013348.5411038,
+    "ast_hash": "e277ef383b038da08b81404c569af6cd",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/advanced-init-once.md": {
+    "mtime": 1792012309.0376678,
+    "seen": 1792013348.5411057,
+    "ast_hash": "8e7759bb017e5d0d1dd64f6f60f85d3e",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/advanced-use-latest.md": {
+    "mtime": 1792012309.0376678,
+    "seen": 1792013348.5411072,
+    "ast_hash": "21d3dbb5f2b557f6d14b224af2d47dc5",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/async-api-routes.md": {
+    "mtime": 1792012309.038666,
+    "seen": 1792013348.541109,
+    "ast_hash": "94058ab5b50f99781e5aa56183b00008",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/async-cheap-condition-before-await.md": {
+    "mtime": 1792012309.038666,
+    "seen": 1792013348.5411108,
+    "ast_hash": "1f34f4c469dc79d9b56610967697c087",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/async-defer-await.md": {
+    "mtime": 1792012309.0396657,
+    "seen": 1792013348.5411124,
+    "ast_hash": "7ae1ade2d9621cc4f820f2e9ffd6357c",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/async-dependencies.md": {
+    "mtime": 1792012309.0396657,
+    "seen": 1792013348.541114,
+    "ast_hash": "3bd47351349c6fe86323bf32dd017d76",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/async-parallel.md": {
+    "mtime": 1792012309.0406654,
+    "seen": 1792013348.541116,
+    "ast_hash": "5029495e12b0b9b3c03b0ae4f3085659",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/async-suspense-boundaries.md": {
+    "mtime": 1792012309.0406654,
+    "seen": 1792013348.5411174,
+    "ast_hash": "00c19181680f2f698664db510da810d4",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/bundle-analyzable-paths.md": {
+    "mtime": 1792012309.0416658,
+    "seen": 1792013348.5411189,
+    "ast_hash": "62351ac5830fb55b2f77d3a4835529ac",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/bundle-barrel-imports.md": {
+    "mtime": 1792012309.0416658,
+    "seen": 1792013348.5411208,
+    "ast_hash": "66868890a107341db885ff644ac1be04",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/bundle-conditional.md": {
+    "mtime": 1792012309.042666,
+    "seen": 1792013348.5411222,
+    "ast_hash": "d1e3c1adf9989359446cbf624bc0587d",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/bundle-defer-third-party.md": {
+    "mtime": 1792012309.042666,
+    "seen": 1792013348.5411239,
+    "ast_hash": "476bf2e75198f7c6accc17ea81f3a161",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/bundle-dynamic-imports.md": {
+    "mtime": 1792012309.0441747,
+    "seen": 1792013348.5411255,
+    "ast_hash": "2ccb840f6d1c0b4ccf9714dc3fb05651",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/bundle-preload.md": {
+    "mtime": 1792012309.0441747,
+    "seen": 1792013348.5411274,
+    "ast_hash": "b67a4242446249b2bafdeb6a620a2af7",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/client-event-listeners.md": {
+    "mtime": 1792012309.045186,
+    "seen": 1792013348.5411289,
+    "ast_hash": "78c4562d3fa71d314c7b98d272f56045",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/client-localstorage-schema.md": {
+    "mtime": 1792012309.0461967,
+    "seen": 1792013348.5411305,
+    "ast_hash": "65c4468bd1d170a5f36003b23062a1e7",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/client-passive-event-listeners.md": {
+    "mtime": 1792012309.0461967,
+    "seen": 1792013348.5411322,
+    "ast_hash": "fbeb4ae3eb20a5bde142b50686e7a166",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/client-swr-dedup.md": {
+    "mtime": 1792012309.0471933,
+    "seen": 1792013348.5411339,
+    "ast_hash": "e912f4b5ee9e04bcf1b12cb86c86e192",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/js-batch-dom-css.md": {
+    "mtime": 1792012309.0471933,
+    "seen": 1792013348.5411355,
+    "ast_hash": "8aeccee9fc15f16f17a8a035b095a088",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/js-cache-function-results.md": {
+    "mtime": 1792012309.0481932,
+    "seen": 1792013348.5411372,
+    "ast_hash": "352d02de8ae05ca73448044591fedd70",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/js-cache-property-access.md": {
+    "mtime": 1792012309.0491984,
+    "seen": 1792013348.5411422,
+    "ast_hash": "3fc311109878cb0564faad1c3f8992a8",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/js-cache-storage.md": {
+    "mtime": 1792012309.0501955,
+    "seen": 1792013348.5411441,
+    "ast_hash": "ae2d1432a80c552513c42dac684d8663",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/js-combine-iterations.md": {
+    "mtime": 1792012309.0501955,
+    "seen": 1792013348.5411456,
+    "ast_hash": "afe61f0854bf49bd52475dbaae3bac85",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/js-early-exit.md": {
+    "mtime": 1792012309.0511954,
+    "seen": 1792013348.5411475,
+    "ast_hash": "729d6ae7f359973121b30dcb3c8e5d9b",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/js-flatmap-filter.md": {
+    "mtime": 1792012309.0521944,
+    "seen": 1792013348.5411491,
+    "ast_hash": "9aa17a40be8457b4d9dbcaf7791acb23",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/js-hoist-regexp.md": {
+    "mtime": 1792012309.0521944,
+    "seen": 1792013348.5411508,
+    "ast_hash": "76ec43c627c68eca559e7a79a6520bbc",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/js-index-maps.md": {
+    "mtime": 1792012309.0532036,
+    "seen": 1792013348.5411525,
+    "ast_hash": "8462667d199be001ed6df6cc0cb5c83b",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/js-length-check-first.md": {
+    "mtime": 1792012309.0541966,
+    "seen": 1792013348.5411541,
+    "ast_hash": "ded33d19a9c0d1aa4138838fd6c30402",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/js-min-max-loop.md": {
+    "mtime": 1792012309.0547047,
+    "seen": 1792013348.5411556,
+    "ast_hash": "3b812151da0f973d0006fc954eeb1950",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/js-request-idle-callback.md": {
+    "mtime": 1792012309.0547047,
+    "seen": 1792013348.5411577,
+    "ast_hash": "eba2c241f730a01cec317c06b53b50c2",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/js-set-map-lookups.md": {
+    "mtime": 1792012309.0557153,
+    "seen": 1792013348.5411592,
+    "ast_hash": "e26c96c5383f2afef8788fc4de914e97",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/js-tosorted-immutable.md": {
+    "mtime": 1792012309.0567148,
+    "seen": 1792013348.5411608,
+    "ast_hash": "55999ff61e2a85ef01e19c685fd1f0c0",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rendering-activity.md": {
+    "mtime": 1792012309.0567148,
+    "seen": 1792013348.5411623,
+    "ast_hash": "3d75187b877aef28c7b4d6b5f33b2915",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rendering-animate-svg-wrapper.md": {
+    "mtime": 1792012309.0567148,
+    "seen": 1792013348.5411637,
+    "ast_hash": "b471e4d8054772a6c5e6a67cf5589e8c",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rendering-conditional-render.md": {
+    "mtime": 1792012309.0577147,
+    "seen": 1792013348.5411654,
+    "ast_hash": "c61896d12e979f353634cc6e5f1b27f0",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rendering-content-visibility.md": {
+    "mtime": 1792012309.0587153,
+    "seen": 1792013348.5411668,
+    "ast_hash": "20a486c49754b5fb0bf806d303118aa2",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rendering-hoist-jsx.md": {
+    "mtime": 1792012309.0587153,
+    "seen": 1792013348.5411687,
+    "ast_hash": "776e60b758a1e9fc755f112ae2dd6253",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rendering-hydration-no-flicker.md": {
+    "mtime": 1792012309.0587153,
+    "seen": 1792013348.5411701,
+    "ast_hash": "dc8c31d3ea2156299b3da17364fc51cb",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rendering-hydration-suppress-warning.md": {
+    "mtime": 1792012309.060226,
+    "seen": 1792013348.5411718,
+    "ast_hash": "ad795d33558ef725bb5204e122e9ffbd",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rendering-resource-hints.md": {
+    "mtime": 1792012309.0612378,
+    "seen": 1792013348.5411732,
+    "ast_hash": "207930cc268f9a74c3cdd79f89330d1c",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rendering-script-defer-async.md": {
+    "mtime": 1792012309.0612378,
+    "seen": 1792013348.541175,
+    "ast_hash": "bb06001577eb52b221ba79abefbfaa6d",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rendering-svg-precision.md": {
+    "mtime": 1792012309.062235,
+    "seen": 1792013348.5411763,
+    "ast_hash": "bb74883dab6f28f8f5652ca779867be0",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rendering-usetransition-loading.md": {
+    "mtime": 1792012309.062235,
+    "seen": 1792013348.5411782,
+    "ast_hash": "5d8cd195730cf58891d3878bafe64bb0",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rerender-defer-reads.md": {
+    "mtime": 1792012309.062235,
+    "seen": 1792013348.5411794,
+    "ast_hash": "75aa954f318eedc3a9ca14fed5aebcac",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rerender-dependencies.md": {
+    "mtime": 1792012309.0632339,
+    "seen": 1792013348.541181,
+    "ast_hash": "52f7b732ffe56cd965fe0843a3bb0734",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rerender-derived-state-no-effect.md": {
+    "mtime": 1792012309.0632339,
+    "seen": 1792013348.5411828,
+    "ast_hash": "31ea3f116cd42a25443867bc093d3694",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rerender-derived-state.md": {
+    "mtime": 1792012309.064239,
+    "seen": 1792013348.5411842,
+    "ast_hash": "37b637d1bc1c176c0e25900d61783766",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rerender-functional-setstate.md": {
+    "mtime": 1792012309.064239,
+    "seen": 1792013348.5411859,
+    "ast_hash": "ad5f7b2581764321ef7c856530130152",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rerender-lazy-state-init.md": {
+    "mtime": 1792012309.0655,
+    "seen": 1792013348.5411873,
+    "ast_hash": "8232f3ad1c39eb66fbbd7586bba68477",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rerender-memo-with-default-value.md": {
+    "mtime": 1792012309.0655,
+    "seen": 1792013348.541189,
+    "ast_hash": "4a9093e4588f6bddd7bde77956ba12f9",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rerender-memo.md": {
+    "mtime": 1792012309.0665002,
+    "seen": 1792013348.5411904,
+    "ast_hash": "ffc8ff5758af92671ad9073316eeec96",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rerender-move-effect-to-event.md": {
+    "mtime": 1792012309.0675013,
+    "seen": 1792013348.541192,
+    "ast_hash": "0f0a135c2841f75d12197e8d7a5b1dce",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rerender-no-inline-components.md": {
+    "mtime": 1792012309.0675013,
+    "seen": 1792013348.5411937,
+    "ast_hash": "e3d4873ce0a8685edb279f3ea195437d",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rerender-simple-expression-in-memo.md": {
+    "mtime": 1792012309.0685005,
+    "seen": 1792013348.5411959,
+    "ast_hash": "93133bbfc9e82851d12dd10314b17239",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rerender-split-combined-hooks.md": {
+    "mtime": 1792012309.0685005,
+    "seen": 1792013348.5411973,
+    "ast_hash": "dd4d7c3c88422702722a10bcb150f645",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rerender-transitions.md": {
+    "mtime": 1792012309.0695045,
+    "seen": 1792013348.5411992,
+    "ast_hash": "a6900c7ea8278db5ebdc0dfea981da68",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rerender-use-deferred-value.md": {
+    "mtime": 1792012309.0695045,
+    "seen": 1792013348.5412006,
+    "ast_hash": "3e3740199ed0050be4c382e2dc38df43",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/rerender-use-ref-transient-values.md": {
+    "mtime": 1792012309.0705013,
+    "seen": 1792013348.541202,
+    "ast_hash": "7518ae1a018dd77897cba1897d321f5f",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/server-after-nonblocking.md": {
+    "mtime": 1792012309.0705013,
+    "seen": 1792013348.541204,
+    "ast_hash": "ef9df9991c5ac8ef7d4685219fc4f2fe",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/server-auth-actions.md": {
+    "mtime": 1792012309.0705013,
+    "seen": 1792013348.5412054,
+    "ast_hash": "79f807c5ceed427137d46e125b47c188",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/server-cache-lru.md": {
+    "mtime": 1792012309.071499,
+    "seen": 1792013348.541207,
+    "ast_hash": "b4bff68df5ef6067861ffd725c5de9db",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/server-cache-react.md": {
+    "mtime": 1792012309.071499,
+    "seen": 1792013348.5412085,
+    "ast_hash": "07ef8edb8485881cb4d5dc679998a69b",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/server-dedup-props.md": {
+    "mtime": 1792012309.0725007,
+    "seen": 1792013348.5412102,
+    "ast_hash": "01b8f05177ca9fec8af89db728dad353",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/server-hoist-static-io.md": {
+    "mtime": 1792012309.0725007,
+    "seen": 1792013348.5412116,
+    "ast_hash": "1592802f3d317a216b5782ff6de2a331",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/server-no-shared-module-state.md": {
+    "mtime": 1792012309.0735006,
+    "seen": 1792013348.541213,
+    "ast_hash": "5f330a1601f30a516ab2b865ba08b45e",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/server-parallel-fetching.md": {
+    "mtime": 1792012309.0735006,
+    "seen": 1792013348.5412147,
+    "ast_hash": "30af1819ffffec5afcababf49ed8e9f1",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/server-parallel-nested-fetching.md": {
+    "mtime": 1792012309.0745003,
+    "seen": 1792013348.541216,
+    "ast_hash": "406444eacc5c3e039ef8dde372924a0e",
+    "semantic_hash": ""
+  },
+  ".claude/skills/vercel-react-best-practices/rules/server-serialization.md": {
+    "mtime": 1792012309.0750055,
+    "seen": 1792013348.5412178,
+    "ast_hash": "65ef936a259fe0bfcdae6e70b643cf8b",
+    "semantic_hash": ""
+  },
+  ".claude/skills/web-design-guidelines/SKILL.md": {
+    "mtime": 1792012257.406554,
+    "seen": 1792013348.5412192,
+    "ast_hash": "8d96a7f6f0c5e1908bab8faf8cd2f9b4",
+    "semantic_hash": ""
+  },
+  "10k-websites/SKILL.md": {
+    "mtime": 1787739186.0,
+    "seen": 1792013348.541221,
+    "ast_hash": "09489a8fea6adaeaa1d9a27176db134d",
+    "semantic_hash": ""
+  },
+  "10k-websites/references/deploy.md": {
+    "mtime": 1787738996.0,
+    "seen": 1792013348.5412226,
+    "ast_hash": "73990db844ca0826def16d894d39c92a",
+    "semantic_hash": ""
+  },
+  "10k-websites/references/design-package.md": {
+    "mtime": 1785418356.0,
+    "seen": 1792013348.5412242,
+    "ast_hash": "4ea937dc426f79fd834db341ed2cb01c",
+    "semantic_hash": ""
+  },
+  "10k-websites/references/ffmpeg-recipes.md": {
+    "mtime": 1787738490.0,
+    "seen": 1792013348.541226,
+    "ast_hash": "2d5e3d0ae1e8ebbdef59352396692b73",
+    "semantic_hash": ""
+  },
+  "10k-websites/references/prompt-laws.md": {
+    "mtime": 1785418356.0,
+    "seen": 1792013348.5412276,
+    "ast_hash": "5f1644bcbf2ccb2da9a234945f9f805b",
+    "semantic_hash": ""
+  },
+  "10k-websites/references/scrub-pipeline.md": {
+    "mtime": 1785325344.0,
+    "seen": 1792013348.5412288,
+    "ast_hash": "38300ee4d83389fca43f7c01aab8d8ca",
+    "semantic_hash": ""
+  },
+  "10k-websites/references/troubleshooting.md": {
+    "mtime": 1786973398.0,
+    "seen": 1792013348.5412307,
+    "ast_hash": "db95387d9d66b18a571a30a87af79c0f",
+    "semantic_hash": ""
+  },
+  "khabir-next/content/blog/ar/adblue-light.mdx": {
+    "mtime": 1792012714.3658328,
+    "seen": 1792013348.5430863,
+    "ast_hash": "a51407c7938422181c7767c54f7f077a",
+    "semantic_hash": ""
+  },
+  "khabir-next/content/blog/ar/code-comes-back.mdx": {
+    "mtime": 1792012716.721457,
+    "seen": 1792013348.5430887,
+    "ast_hash": "19483b9f4caddddf30a559685d4f0460",
+    "semantic_hash": ""
+  },
+  "khabir-next/app/icon.svg": {
+    "mtime": 1791701528.996487,
+    "seen": 1792013348.54391,
+    "ast_hash": "2dff5d254822ba171930c9f5533136ad",
+    "semantic_hash": ""
+  },
+  "khabir-next/public/file.svg": {
+    "mtime": 1791700326.6566913,
+    "seen": 1792013348.5439126,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": ""
+  },
+  "khabir-next/public/globe.svg": {
+    "mtime": 1791700326.7130105,
+    "seen": 1792013348.5439148,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": ""
+  },
+  "khabir-next/public/media/step-1.jpg": {
+    "mtime": 1791700766.5887556,
+    "seen": 1792013348.5446098,
+    "ast_hash": "04b9aeb016533622af2a0c8f2aff1645",
+    "semantic_hash": ""
+  },
+  "khabir-next/public/media/step-2.jpg": {
+    "mtime": 1791700766.606974,
+    "seen": 1792013348.5446124,
+    "ast_hash": "c5f6ef60c6eb1fa31f8a164684d57ee3",
+    "semantic_hash": ""
+  },
+  "khabir-next/public/media/step-3.jpg": {
+    "mtime": 1791700766.6244483,
+    "seen": 1792013348.544614,
+    "ast_hash": "a39e4720b72e9d99415d4563c2001e3f",
+    "semantic_hash": ""
+  },
+  "khabir-next/public/next.svg": {
+    "mtime": 1791700326.7722876,
+    "seen": 1792013348.5446162,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": ""
+  },
+  "khabir-next/public/vercel.svg": {
+    "mtime": 1791700326.8144398,
+    "seen": 1792013348.544618,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": ""
+  },
+  "khabir-next/public/window.svg": {
+    "mtime": 1791700326.8386364,
+    "seen": 1792013348.5446203,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
+  },
+  "khabir-next/components/ui/PhoneLinks.tsx": {
+    "mtime": 1792014478.3027256,
+    "seen": 1792014953.2865462,
+    "ast_hash": "33073a0c51bbb3be5767fcdc07b50aec",
+    "semantic_hash": ""
+  }
+}

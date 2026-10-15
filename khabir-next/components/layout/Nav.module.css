@@ -68,10 +68,24 @@
 /* Page links. On narrower screens they move to a second row that scrolls sideways. */
 .links {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 4px;
   list-style: none;
   margin: 0 auto;
   padding: 0;
+}
+
+/* Never show list bullets, whatever the browser default or a cached stylesheet says. */
+.links li {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.links li::marker {
+  content: "";
 }
 
 .links a {
@@ -100,6 +114,14 @@
   .nav {
     flex-wrap: wrap;
     row-gap: 6px;
+  }
+  /* Row 1: logo + language + button (the brand gives way first). Row 2: page links. */
+  .brand {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .right {
+    flex: none;
   }
   .links {
     order: 3;
