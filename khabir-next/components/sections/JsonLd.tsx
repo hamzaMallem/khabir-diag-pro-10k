@@ -1,6 +1,7 @@
 import type { Dictionary } from "@/i18n/dictionaries";
 import type { Locale } from "@/i18n/config";
 import { site } from "@/config/site";
+import { socialProfiles } from "@/config/social";
 
 /**
  * Structured data for search engines (schema.org AutoRepair).
@@ -12,6 +13,8 @@ export function JsonLd({ dict, locale }: { dict: Dictionary; locale: Locale }) {
     "@type": "AutoRepair",
     name: site.name,
     alternateName: site.nameArabic,
+    // LinkedIn is the founder's personal profile, not a company Page.
+    sameAs: socialProfiles.filter((profile) => profile.owner === "workshop").map((profile) => profile.url),
     url: `${site.url}/${locale}`,
     image: `${site.url}/media/hero-desktop-poster.jpg`,
     description: dict.meta_desc,
