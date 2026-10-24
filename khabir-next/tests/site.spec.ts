@@ -78,10 +78,16 @@ test.describe("routing and language", () => {
     await page.goto("/fr");
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /\/fr$/);
     for (const l of LOCALES) await expect(page.locator(`link[rel="alternate"][hreflang="${l}"]`)).toHaveCount(1);
-    const json = JSON.parse((await page.locator('script[type="application/ld+json"]').textContent()) ?? "{}");
+    const scripts = page.locator('script[type="application/ld+json"]');
+    const json = JSON.parse((await scripts.nth(0).textContent()) ?? "{}");
     expect(json["@type"]).toBe("AutoRepair");
     expect(json.telephone).toBe("+212632899218"); // WhatsApp number confirmed by the owner (config/site.ts)
     expect(json.openingHours).toContain("Fr 09:00-19:00");
+    expect(json.knowsAbout.length).toBeGreaterThan(0);
+    expect(json.contactPoint).toHaveLength(2);
+    const faq = JSON.parse((await scripts.nth(1).textContent()) ?? "{}");
+    expect(faq["@type"]).toBe("FAQPage");
+    expect(faq.mainEntity).toHaveLength(5);
   });
 
   test("security headers are sent on every page", async ({ request }) => {
