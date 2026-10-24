@@ -91,6 +91,11 @@ Running record of what has been done and what is next, so a new Claude Code sess
 - **Not committed on purpose** (the remaining 7 of 9 unused images in `public/`; the two above were moved to `media/`): images dropped in `khabir-next/public/` (Mercedes E63 render, iStock files, `cvsimo-photo`, `bgWebsite`, `service*.png`, a WhatsApp photo of a heater core). Nothing references them, they weigh ~9 MB, and some look like third-party/stock images (licence unknown). Decide which ones are real workshop photos before adding them (optimised, under `public/media`).
 - Tests: 37 pass (new: mobile menu on phone/tablet, language switch in sheet, ticker visible on phones).
 
+### 2026-10-15 (night) — traffic & social media plan
+- Wrote `docs/marketing-plan.md` (Arabic): priorities (Google Maps first, then FB, IG Reels, YouTube, blog, Pinterest), Google Business Profile checklist + review routine, SEO article cadence, AI-search visibility (Bing Webmaster, llms.txt, sameAs, FAQPage), weekly posting calendar, Claude/ChatGPT/Gemini split with ready prompts, 45-min daily routine, KPIs, 90-day roadmap.
+- Next (code): add `llms.txt`, social links in footer + JSON-LD `sameAs`, FAQPage schema — once the accounts exist.
+- Blocked on owner: GBP access, account handle, face-on-camera consent, publishable prices.
+
 ## Next steps (in order)
 
 1. Get from the owner: real workshop photos (about page + hero alternatives).
@@ -106,3 +111,16 @@ Running record of what has been done and what is next, so a new Claude Code sess
 - Query the graph before reading many files: `graphify query "<question>"`, `graphify path "A" "B"`, `graphify explain "X"`.
 - After code changes: `graphify update .` (AST only, no LLM).
 - Append a dated entry to this file at the end of every work session.
+
+### 2026-10-23 — verified social profiles on the website
+- Added a shared social-profile list and a responsive footer section in Arabic, French and English, with all seven owner-approved account URLs. External links have visible platform names, keyboard focus, 44px minimum height and an accessible new-tab notice.
+- LinkedIn is labelled as the founder's personal profile. Only the six workshop profiles are included in AutoRepair JSON-LD sameAs.
+- Existing WhatsApp CTA, site domain configuration and workshop contact details were not changed by this social-link update.
+- Validation: lint and TypeScript clean; Webpack production build succeeds; all 38 existing Playwright tests pass. Local Turbopack MDX workers fail to start, while Vercel deployment status is successful. Arabic/French footer screenshots reviewed and all seven URLs checked in rendered HTML.
+- Commit 51107ff on feat/social-profile-links; draft PR https://github.com/hamzaMallem/khabir-diag-pro-10k/pull/1. Production not merged. Existing unrelated local changes were excluded from the commit.
+
+### 2026-10-24 — custom domain khabirdiag.com
+- Bought `khabirdiag.com` at Cloudflare Registrar (auto-renew on). Added it to the Vercel project `khabir-diag-pro-10k` as the production domain; `www.khabirdiag.com` redirects to it with a 308. Both Cloudflare DNS records are CNAMEs set to DNS only (grey cloud), as Vercel requires. The owner confirmed the site opens on the new domain.
+- `khabir-next/README.md` now documents the live domain, hosting and DNS setup.
+- Still to do: set `NEXT_PUBLIC_SITE_URL=https://khabirdiag.com` in Vercel, submit the new sitemap in Google Search Console, update the Google Business Profile website link, and merge PR #1 to put the footer social links in production.
+- Left out of the commit on purpose: unused images in `khabir-next/public/` (no code references them), regenerated `graphify-out/` files, and `docs/marketing-plan.md` (internal plan, repo is public).

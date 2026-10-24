@@ -21,6 +21,12 @@ npx playwright test                         # needs the production build
 
 Address and opening hours: `config/site.ts`.
 
+## Live site and deployment
+- Live: **https://khabirdiag.com** (`www.khabirdiag.com` redirects to it with a 308). Fallback URL: `khabir-diag-pro-10k.vercel.app`.
+- Hosting: Vercel (Hobby plan), project `khabir-diag-pro-10k`. Every push to `main` deploys to production; other branches get preview deployments.
+- Domain: registered at Cloudflare. DNS records point to Vercel and are set to **DNS only** (grey cloud), because Vercel must see the domain directly to issue the HTTPS certificate.
+- Set `NEXT_PUBLIC_SITE_URL=https://khabirdiag.com` in Vercel (Settings, Environment Variables) so canonical links, hreflang and the sitemap use the real domain.
+
 ## Where to edit
 Texts `messages/*.json` · colors `styles/globals.css` · videos, caption timing, scroll length `config/hero.ts` · section order `app/[locale]/page.tsx`. Full table in the maintenance guide.
 
@@ -36,4 +42,4 @@ Native scrolling plus one `requestAnimationFrame` loop that seeks the video; no 
 ## Known limits
 - **The current videos are placeholders:** "Dola AI" watermark, and the mobile clip shows a Maserati badge. Replace before launch.
 - Not measured: Lighthouse scores, real iPhone/Android seeking (desktop emulation is not proof).
-- Missing business data: WhatsApp number, address, opening hours, real site URL, real workshop photos.
+- Business data: the real site URL is now https://khabirdiag.com. Contact details and workshop photos were added later; see `../docs/PROJECT_LOG.md` for what is still missing.
