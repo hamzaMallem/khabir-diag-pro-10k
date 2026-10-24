@@ -91,6 +91,13 @@ Running record of what has been done and what is next, so a new Claude Code sess
 - **Not committed on purpose** (the remaining 7 of 9 unused images in `public/`; the two above were moved to `media/`): images dropped in `khabir-next/public/` (Mercedes E63 render, iStock files, `cvsimo-photo`, `bgWebsite`, `service*.png`, a WhatsApp photo of a heater core). Nothing references them, they weigh ~9 MB, and some look like third-party/stock images (licence unknown). Decide which ones are real workshop photos before adding them (optimised, under `public/media`).
 - Tests: 37 pass (new: mobile menu on phone/tablet, language switch in sheet, ticker visible on phones).
 
+### 2026-10-24 — custom domain khabirdiag.com
+- Domain `khabirdiag.com` is attached to Vercel project `khabir-diag-pro-10k` (team `mallemdevs-9140s-projects`). Both `khabirdiag.com` and `www.khabirdiag.com` show as verified; `www` redirects 308 to the apex. DNS is on Cloudflare nameservers and Vercel reports no misconfiguration.
+- Live check: `https://khabirdiag.com/` returns 200 (scraper check; the sandbox proxy blocks direct curl to the domain). Security headers on the custom domain were **not** verified from here.
+- **Blocked**: `NEXT_PUBLIC_SITE_URL=https://khabirdiag.com` could not be created. The Vercel connector returns 403 for production env vars ("additional permissions required"); the Vercel CLI is not installed in this session. Until it is set, canonical, sitemap and Open Graph URLs still point to `khabir-diag-pro-10k.vercel.app`.
+- Next: set `NEXT_PUBLIC_SITE_URL` in Vercel (Settings → Environment Variables, production), then redeploy (it is inlined at build time). Then re-check headers on the custom domain.
+- Nothing committed or pushed in this session.
+
 ## Next steps (in order)
 
 1. Get from the owner: real workshop photos (about page + hero alternatives).
