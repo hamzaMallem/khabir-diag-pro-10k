@@ -35,21 +35,31 @@ test.describe("fault-code library", () => {
   });
 
   for (const locale of LOCALES) {
-    test(`/${locale}/codes/p0420 has the full structure and structured data`, async ({ page }) => {
+    test(`/${locale}/codes/p0113 (no extras) has the full structure and structured data`, async ({ page }) => {
       const problems = trackProblems(page);
-      await page.goto(`/${locale}/codes/p0420`);
-      await expect(page.locator("h1")).toContainText("P0420");
+      await page.goto(`/${locale}/codes/p0113`);
+      await expect(page.locator("h1")).toContainText("P0113");
       await expect(page.locator("main h2")).toHaveCount(6); // can I drive, symptoms, causes, check, related + call to action
-      await expect(page.locator("link[rel='canonical']")).toHaveAttribute("href", new RegExp(`/${locale}/codes/p0420$`));
+      await expect(page.locator("link[rel='canonical']")).toHaveAttribute("href", new RegExp(`/${locale}/codes/p0113$`));
       const blocks = await page.locator("script[type='application/ld+json']").allTextContents();
       const types = blocks.map((b) => JSON.parse(b)["@type"]);
       expect(types).toEqual(expect.arrayContaining(["Article", "BreadcrumbList", "FAQPage"]));
       // The WhatsApp button carries the code in the pre-filled message.
       const wa = await page.locator("a[href*='wa.me']").last().getAttribute("href");
-      expect(decodeURIComponent(wa ?? "")).toContain("P0420");
+      expect(decodeURIComponent(wa ?? "")).toContain("P0113");
       expect(problems).toEqual([]);
     });
   }
+
+  test("codes with extra detail show the diagnostic steps and the brand notes, others do not", async ({ page }) => {
+    for (const locale of LOCALES) {
+      await page.goto(`/${locale}/codes/p0299`);
+      await expect(page.locator("main ol li")).toHaveCount(6);
+      await expect(page.locator("main li strong", { hasText: "Peugeot" })).toBeVisible();
+    }
+    await page.goto("/en/codes/p0113");
+    await expect(page.locator("main ol")).toHaveCount(0);
+  });
 
   test("an unknown code is a 404", async ({ page }) => {
     const response = await page.goto("/fr/codes/p9999");
@@ -104,7 +114,7 @@ test.describe("search engine files", () => {
 
   test("without an AdSense ID there is no ads.txt, no ad script and a strict CSP", async ({ request, page }) => {
     expect((await request.get("/ads.txt")).status()).toBe(404);
-    const response = await page.goto("/fr/codes/p0420");
+    const response = await page.goto("/fr/codes/p0113");
     const csp = response?.headers()["content-security-policy"] ?? "";
     expect(csp).not.toContain("googlesyndication");
     expect(await page.locator("script[src*='adsbygoogle']").count()).toBe(0);

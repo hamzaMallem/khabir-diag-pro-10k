@@ -131,3 +131,8 @@ Running record of what has been done and what is next, so a new Claude Code sess
 - Query the graph before reading many files: `graphify query "<question>"`, `graphify path "A" "B"`, `graphify explain "X"`.
 - After code changes: `graphify update .` (AST only, no LLM).
 - Append a dated entry to this file at the end of every work session.
+
+### 2026-11-17 (later) — diagnostic steps merged, Next.js 16.4.6
+- Merged the diagnostic steps and per-brand notes (VW/Audi, Mercedes, Renault/Dacia, Peugeot) written by the khabir-diag-hub session for P0087, P0299, P0401, P0420 and P2002 (fr/ar/en) into `content/codes/extra.ts`; code pages show "step by step" and "brand by brand" sections only for codes that have an entry. Our own texts and structure were kept; no workshop cases were added (owner must supply real ones). These notes are not yet reviewed by the workshop team.
+- `next` and `eslint-config-next` pinned to 16.4.6: `next build` started failing its own security check on 16.4.3 (moderate advisory GHSA-mfr8-8qww-v76h). `npm audit --omit=dev`: 0 vulnerabilities.
+- Verified: tsc, build (153 pages), Playwright 61 of 61.

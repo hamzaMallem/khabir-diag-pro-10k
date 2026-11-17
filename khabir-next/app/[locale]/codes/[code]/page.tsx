@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CODES_PUBLISHED, codes, codeSlug, getCode, getCodeText, getRelatedCodes } from "@/content/codes";
+import { getExtra, type BrandKey } from "@/content/codes/extra";
 import { site } from "@/config/site";
 import { isLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -20,6 +21,9 @@ export const dynamicParams = false;
 export function generateStaticParams() {
   return locales.flatMap((locale) => codes.map((c) => ({ locale, code: codeSlug(c.code) })));
 }
+
+/** Brand families named in the per-brand notes (proper names, not translated). */
+const brandNames: Record<BrandKey, string> = { vw: "Volkswagen / Audi", mercedes: "Mercedes-Benz", renault: "Renault / Dacia", peugeot: "Peugeot" };
 
 const fill = (template: string, values: Record<string, string>) => template.replace(/\{(\w+)\}/g, (_, key: string) => values[key] ?? "");
 
@@ -42,6 +46,7 @@ export default async function CodePage({ params }: Params) {
   const dict = await getDictionary(locale);
   const text = getCodeText(locale, meta.code);
   const related = getRelatedCodes(meta).slice(0, 8);
+  const extra = getExtra(locale, meta.code);
   const path = `/${locale}/codes/${codeSlug(meta.code)}`;
   const heading = `${meta.code} · ${text.title}`;
 
@@ -123,8 +128,32 @@ export default async function CodePage({ params }: Params) {
               ))}
             </ul>
 
+            {extra && (
+              <>
+                <h2>{dict.cd_steps}</h2>
+                <ol>
+                  {extra.steps.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ol>
+              </>
+            )}
+
             <h2>{dict.cd_check}</h2>
             <p>{text.check}</p>
+
+            {extra && (
+              <>
+                <h2>{dict.cd_brand_notes}</h2>
+                <ul>
+                  {(Object.keys(brandNames) as BrandKey[]).map((key) => (
+                    <li key={key}>
+                      <strong>{brandNames[key]}.</strong> {extra.brands[key]}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
 
             <p className={styles.note}>{dict.cd_note}</p>
             <p className={styles.byline}>
