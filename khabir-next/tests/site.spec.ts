@@ -239,7 +239,7 @@ test.describe("layout", () => {
       const page = await context.newPage();
       await page.goto("/ar");
       const links = page.locator("nav ul a");
-      await expect(links).toHaveCount(4);
+      await expect(links).toHaveCount(5);
       const boxes = await links.evaluateAll((els) =>
         els.map((el) => {
           const r = el.getBoundingClientRect();

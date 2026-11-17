@@ -5,7 +5,9 @@ import { site } from "@/config/site";
 import { isLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { formatDate, getPost, getPostSlugs } from "@/lib/blog";
+import { adsense } from "@/lib/adsense";
 import { pageMetadata } from "@/lib/pageMetadata";
+import { AdSlot } from "@/components/ads/AdSlot";
 import { PageHeader, WhatsAppCta, pageStyles as styles } from "@/components/pages/PageParts";
 import prose from "@/components/pages/Prose.module.css";
 
@@ -57,6 +59,7 @@ export default async function PostPage({ params }: Params) {
         <section className="section" style={{ paddingTop: 0 }}>
           <div className={`wrap ${prose.prose}`}>
             <Content />
+            <AdSlot client={adsense.client} slot={adsense.slot} label={dict.ad_label} />
           </div>
           <div className="wrap">
             <WhatsAppCta locale={locale} title={dict.bl_cta_t} text={dict.bl_cta_p} label={dict.cta} message={dict.wa_msg} />

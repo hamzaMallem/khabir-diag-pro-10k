@@ -189,7 +189,8 @@
 }
 
 .back {
-  display: inline-block;
+  display: block;
+  width: fit-content;
   margin-bottom: 24px;
   color: var(--text-secondary);
   text-decoration: none;

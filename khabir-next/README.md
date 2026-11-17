@@ -18,8 +18,13 @@ npx playwright test                         # needs the production build
 |---|---|
 | `NEXT_PUBLIC_WHATSAPP_NUMBER` | digits only, e.g. `2126XXXXXXXX`. While empty, contact buttons scroll to the contact section and show "to be added" |
 | `NEXT_PUBLIC_SITE_URL` | public URL, used for canonical links, hreflang, sitemap |
+| `NEXT_PUBLIC_ADSENSE_CLIENT` | AdSense publisher ID `ca-pub-XXXXXXXXXXXXXXXX`. **Leave empty until AdSense approves the site.** Once set: the ad script loads, `/ads.txt` is served and the CSP allows Google ad domains |
+| `NEXT_PUBLIC_ADSENSE_SLOT` | ad unit ID (one responsive display unit). Ads appear only inside fault-code pages and articles |
 
 Address and opening hours: `config/site.ts`.
+
+## Fault-code library
+`content/codes/`: `meta.ts` lists the codes (system, severity, official SAE wording, brands), `fr.ts` / `ar.ts` / `en.ts` hold the hand-written explanation of each. Adding a code = one entry in `meta.ts` + the same key in the three language files (the build fails if one is missing). Keep it hand-written and limited to codes the workshop really sees: thousands of near-identical generated pages are low-value content for Google and AdSense.
 
 ## Where to edit
 Texts `messages/*.json` · colors `styles/globals.css` · videos, caption timing, scroll length `config/hero.ts` · section order `app/[locale]/page.tsx`. Full table in the maintenance guide.

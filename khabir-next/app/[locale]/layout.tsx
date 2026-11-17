@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { site } from "@/config/site";
 import { getDirection, isLocale, locales, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { adsEnabled, adsense } from "@/lib/adsense";
 import { getWhatsAppHref } from "@/lib/whatsapp";
 import { Background } from "@/components/layout/Background";
 import { Footer } from "@/components/layout/Footer";
@@ -63,12 +64,25 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   const links: NavLink[] = [
     { path: "", label: dict.nav_home },
     { path: "/services", label: dict.nav_services },
+    { path: "/codes", label: dict.nav_codes },
     { path: "/blog", label: dict.nav_blog },
     { path: "/about", label: dict.nav_about },
+  ];
+  // Pages that only appear in the footer: contact details and the legal pages AdSense requires.
+  const footerLinks: NavLink[] = [
+    ...links,
+    { path: "/contact", label: dict.nav_contact },
+    { path: "/privacy", label: dict.ft_privacy },
+    { path: "/terms", label: dict.ft_terms },
   ];
 
   return (
     <html lang={locale} dir={getDirection(locale)} className={`${inter.variable} ${plexArabic.variable} ${plex.variable}`}>
+      {adsEnabled && (
+        <head>
+          <script async src={`${adsense.scriptSrc}?client=${adsense.client}`} crossOrigin="anonymous" />
+        </head>
+      )}
       <body>
         <a className="skip" href="#main">
           {dict.skip}
@@ -85,7 +99,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
           links={links}
         />
         {children}
-        <Footer dict={dict} locale={locale} links={links} />
+        <Footer dict={dict} locale={locale} links={footerLinks} />
       </body>
     </html>
   );
