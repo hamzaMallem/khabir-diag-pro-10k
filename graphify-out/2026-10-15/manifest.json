@@ -60,9 +60,9 @@
     "semantic_hash": "4fe5f9e490ab4f107afc707d7eafc819"
   },
   "khabir-next/app/[locale]/layout.tsx": {
-    "mtime": 1792013042.541401,
-    "seen": 1792013348.5353842,
-    "ast_hash": "b75ff87c5ba6a13fa8ac91dc55f42ec4",
+    "mtime": 1792061355.324337,
+    "seen": 1792061752.9153397,
+    "ast_hash": "2011a6c9df38e8f615c2839c534029ee",
     "semantic_hash": ""
   },
   "khabir-next/app/[locale]/page.tsx": {
@@ -180,9 +180,9 @@
     "semantic_hash": "d864a90efca33f28d14d8c6b1db4f753"
   },
   "khabir-next/config/site.ts": {
-    "mtime": 1792014413.5456004,
-    "seen": 1792014953.2869675,
-    "ast_hash": "bb781a626b5fec17f7f31a1ea5079dfa",
+    "mtime": 1792015708.020682,
+    "seen": 1792061752.920196,
+    "ast_hash": "f9f10056c5939374b83c45a4d42ed806",
     "semantic_hash": ""
   },
   "khabir-next/eslint.config.mjs": {
@@ -234,27 +234,27 @@
     "semantic_hash": "d9e8ddd49882cf2beaa4be0547d4003d"
   },
   "khabir-next/messages/ar.json": {
-    "mtime": 1792014432.30077,
-    "seen": 1792014953.2892706,
-    "ast_hash": "b958d8992b21ffc3a153c88bb2ad69a6",
+    "mtime": 1792061335.2640023,
+    "seen": 1792061752.9221168,
+    "ast_hash": "2838d8f19d5074a0816d9f0b28af678d",
     "semantic_hash": ""
   },
   "khabir-next/messages/en.json": {
-    "mtime": 1792014449.1555567,
-    "seen": 1792014953.2892742,
-    "ast_hash": "d04b37d27b60a7a13bcbac6ba3af91d6",
+    "mtime": 1792061335.2700198,
+    "seen": 1792061752.9221196,
+    "ast_hash": "fb6278645bf3221732d3e530736e886c",
     "semantic_hash": ""
   },
   "khabir-next/messages/fr.json": {
-    "mtime": 1792014435.8783374,
-    "seen": 1792014953.2892764,
-    "ast_hash": "00ff9241f7415a02c70329c83cc8e433",
+    "mtime": 1792061335.2670062,
+    "seen": 1792061752.9221218,
+    "ast_hash": "6f4a450f077622399f55f891f5201210",
     "semantic_hash": ""
   },
   "khabir-next/next.config.ts": {
-    "mtime": 1792012615.7314413,
-    "seen": 1792013348.539644,
-    "ast_hash": "33e68c33d6348aede9a4fdbca6bf1d32",
+    "mtime": 1792015395.4115243,
+    "seen": 1792061752.9221234,
+    "ast_hash": "a4bb3a5e7b01349380181c5fb2a6665b",
     "semantic_hash": ""
   },
   "khabir-next/package.json": {
@@ -300,10 +300,10 @@
     "semantic_hash": "5f2180c78b8d5ab5fe245fa4a4cdf9a1"
   },
   "tools/media/encode.sh": {
-    "mtime": 1791700283.7373402,
-    "seen": 1791702046.662699,
-    "ast_hash": "b5603133f9f76abda223fe33c70f0e72",
-    "semantic_hash": "b5603133f9f76abda223fe33c70f0e72"
+    "mtime": 1792061178.6395142,
+    "seen": 1792061752.9234564,
+    "ast_hash": "b27c42b63c3806493bf184109881687a",
+    "semantic_hash": ""
   },
   "docs/claude-code-nextjs-dual-video-prompt.md": {
     "mtime": 1791699834.772792,
@@ -384,28 +384,28 @@
     "semantic_hash": "a39e4720b72e9d99415d4563c2001e3f"
   },
   "khabir-next/public/media/hero-desktop-end.jpg": {
-    "mtime": 1791700771.7519512,
-    "seen": 1791702046.6627243,
-    "ast_hash": "a73b36e68e672a278e3104a80b729ad7",
-    "semantic_hash": "a73b36e68e672a278e3104a80b729ad7"
+    "mtime": 1792061229.2437334,
+    "seen": 1792061752.9560583,
+    "ast_hash": "6e2a1f00b292fdf572394da0dd934596",
+    "semantic_hash": ""
   },
   "khabir-next/public/media/hero-desktop-poster.jpg": {
-    "mtime": 1791700491.585105,
-    "seen": 1791702046.6627264,
-    "ast_hash": "cda16f757a93b25965af3c18a68c4682",
-    "semantic_hash": "cda16f757a93b25965af3c18a68c4682"
+    "mtime": 1792061193.1643622,
+    "seen": 1792061752.9560611,
+    "ast_hash": "6879b0ed658db04d9ececd6fdc546e7a",
+    "semantic_hash": ""
   },
   "khabir-next/public/media/hero-mobile-end.jpg": {
-    "mtime": 1791700771.8438056,
-    "seen": 1791702046.6627283,
-    "ast_hash": "a44afd58f84c557c0ff66ad240e2cf16",
-    "semantic_hash": "a44afd58f84c557c0ff66ad240e2cf16"
+    "mtime": 1792061229.25373,
+    "seen": 1792061752.9560635,
+    "ast_hash": "43adde29eab4a2f199316c84ca56c4c7",
+    "semantic_hash": ""
   },
   "khabir-next/public/media/hero-mobile-poster.jpg": {
-    "mtime": 1791700496.825122,
-    "seen": 1791702046.66273,
-    "ast_hash": "ad2c1a4ea88e0e0a60d140277ce8d1b5",
-    "semantic_hash": "ad2c1a4ea88e0e0a60d140277ce8d1b5"
+    "mtime": 1792061199.8202884,
+    "seen": 1792061752.9560652,
+    "ast_hash": "654a5452de33aa6bf22c65945e8efaa2",
+    "semantic_hash": ""
   },
   "khabir-diagnostic-auto-pro/assets/hero-scrub.mp4": {
     "mtime": 1791409187.129525,
@@ -414,16 +414,16 @@
     "semantic_hash": "45a83ceeae79dfd9e1b4b67e85ce2db1"
   },
   "khabir-next/public/media/hero-desktop.mp4": {
-    "mtime": 1791700491.4024258,
-    "seen": 1791702046.6627336,
-    "ast_hash": "566430ab5805785f73a8c9591ebbc914",
-    "semantic_hash": "566430ab5805785f73a8c9591ebbc914"
+    "mtime": 1792061192.9660773,
+    "seen": 1792061752.957226,
+    "ast_hash": "b67caeceb0a24ed21abced06a219658b",
+    "semantic_hash": ""
   },
   "khabir-next/public/media/hero-mobile.mp4": {
-    "mtime": 1791700496.6726882,
-    "seen": 1791702046.6627357,
-    "ast_hash": "1b637ca1e97243b4d8653ee72cce1cf6",
-    "semantic_hash": "1b637ca1e97243b4d8653ee72cce1cf6"
+    "mtime": 1792061199.6632905,
+    "seen": 1792061752.9572287,
+    "ast_hash": "0f9a1d89317a78ec4fbe4e6493f00e80",
+    "semantic_hash": ""
   },
   "khabir-next/playwright.config.ts": {
     "mtime": 1791701998.947825,
@@ -432,9 +432,9 @@
     "semantic_hash": "25b759547941fd1ec97b1280e08f8089"
   },
   "khabir-next/tests/site.spec.ts": {
-    "mtime": 1792014644.671373,
-    "seen": 1792014953.2908313,
-    "ast_hash": "ffb1a7fc15d0d5a96279f63f1a501502",
+    "mtime": 1792061419.040404,
+    "seen": 1792061752.9227927,
+    "ast_hash": "bc043938b2885abd2069ee47e6abbcaf",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -444,9 +444,9 @@
     "semantic_hash": "e1c2001d0dde7ec8c5bdfeb9205fa3a8"
   },
   "docs/PROJECT_LOG.md": {
-    "mtime": 1792014932.8939054,
-    "seen": 1792014953.3217478,
-    "ast_hash": "b447d8be02053633c993219e83683cf4",
+    "mtime": 1792015742.242732,
+    "seen": 1792061752.9526336,
+    "ast_hash": "6e1d5a4dedc5453df11bc0a4525dfa58",
     "semantic_hash": ""
   },
   "docs/beginner-maintenance-guide.md": {
@@ -492,9 +492,9 @@
     "semantic_hash": ""
   },
   "khabir-next/components/sections/LocationSection.tsx": {
-    "mtime": 1792014672.4850917,
-    "seen": 1792014953.2856593,
-    "ast_hash": "4e17915ae5ef0ac38ddde9f5e82bf3ae",
+    "mtime": 1792015397.762678,
+    "seen": 1792061752.918357,
+    "ast_hash": "111ee3b7dbb952bb870c3242b0209fe3",
     "semantic_hash": ""
   },
   "khabir-next/lib/blog.ts": {

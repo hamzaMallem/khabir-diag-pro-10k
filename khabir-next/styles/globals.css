@@ -16,6 +16,9 @@
   --ok: #5fd49a;
   --text-secondary: #9dadb3;
   --text-primary: #ecf1f2;
+  --nav-solid: rgba(14, 21, 24, 0.72);
+  --sheet-bg: rgba(10, 15, 17, 0.98);
+  --lab-gradient: linear-gradient(180deg, transparent, rgba(22, 33, 38, 0.55) 30%, rgba(22, 33, 38, 0.55) 70%, transparent);
 
   /* Fonts (loaded in app/[locale]/layout.tsx) */
   --sans: -apple-system, BlinkMacSystemFont, var(--font-inter), "Segoe UI", system-ui, sans-serif;
@@ -30,6 +33,38 @@
 
   /* Page side padding */
   --gutter: clamp(20px, 6vw, 96px);
+}
+
+
+/* ---------- Light Mode (Apple-calibre precision palette) ---------- */
+[data-theme="light"] {
+  --canvas: #f8fafb;
+  --panel: #ffffff;
+  --panel-2: #edf1f4;
+  --line: rgba(14, 21, 24, 0.08);
+  --line-strong: rgba(14, 21, 24, 0.18);
+  --accent: #e65100;
+  --accent-hover: #cf4500;
+  --accent-muted: rgba(230, 81, 0, 0.12);
+  --on-accent: #ffffff;
+  --fault: #d32f2f;
+  --ok: #0d8a54;
+  --text-secondary: #405058;
+  --text-primary: #0e1518;
+  --lab-gradient: transparent;
+  --text-shadow: none;
+  --nav-solid: rgba(248, 250, 251, 0.85);
+  --sheet-bg: rgba(248, 250, 251, 0.98);
+}
+
+[data-theme="light"] .quote,
+[data-theme="light"] [class*="panel"],
+[data-theme="light"] [class*="card"] {
+  box-shadow: 0 1px 3px rgba(14, 21, 24, 0.04), 0 6px 20px rgba(14, 21, 24, 0.03);
+}
+
+[data-theme="light"] .wave path {
+  opacity: 0.9;
 }
 
 /* Arabic uses a different display font. Letters must never be split or letter-spaced. */

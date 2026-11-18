@@ -87,6 +87,7 @@
 
 .cap {
   position: absolute;
+  color: #ECF1F2;
   inset-inline-start: var(--gutter);
   inset-inline-end: var(--gutter);
   bottom: clamp(56px, 11svh, 128px);
