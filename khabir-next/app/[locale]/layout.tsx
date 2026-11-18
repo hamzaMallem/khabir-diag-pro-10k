@@ -77,11 +77,11 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   ];
 
   return (
-    <html lang={locale} dir={getDirection(locale)} suppressHydrationWarning className={`${inter.variable} ${plexArabic.variable} ${plex.variable}`}>
+    <html lang={locale} dir={getDirection(locale)} data-theme="light" suppressHydrationWarning className={`${inter.variable} ${plexArabic.variable} ${plex.variable}`}>
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})()`,
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t!=='dark'&&t!=='light'){t='light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})()`,
           }}
         />
         {adsEnabled && (
