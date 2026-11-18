@@ -10,15 +10,23 @@ const vercelLive = process.env.VERCEL_ENV === "preview" ? " https://vercel.live"
 // What the site is allowed to load. Everything is self-hosted (fonts via next/font, videos in /public/media)
 // except the Google Maps embed. 'unsafe-inline' is needed for Next.js's inline bootstrap scripts on static pages
 // (nonces would force every page to render on each request) and for React style attributes.
+// Google AdSense domains are allowed ONLY once a publisher ID is set (see lib/adsense.ts), so the site stays strict until then.
+// The list follows Google's CSP guide for AdSense (https://developers.google.com/publisher-tag/guides/content-security-policy).
+const adsEnabled = /^ca-pub-\d{10,20}$/.test((process.env.NEXT_PUBLIC_ADSENSE_CLIENT ?? "").trim());
+const adScript = adsEnabled ? " https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.g.doubleclick.net https://*.google.com https://*.adtrafficquality.google" : "";
+const adImg = adsEnabled ? " https://*.googlesyndication.com https://*.g.doubleclick.net https://*.google.com https://*.adtrafficquality.google" : "";
+const adConnect = adsEnabled ? " https://*.googlesyndication.com https://*.g.doubleclick.net https://*.google.com https://*.adtrafficquality.google" : "";
+const adFrame = adsEnabled ? " https://*.googlesyndication.com https://*.g.doubleclick.net https://*.adtrafficquality.google" : "";
+
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""}${vercelLive}`,
+  `script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""}${vercelLive}${adScript}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
+  `img-src 'self' data: blob:${adImg}`,
   "font-src 'self'",
   "media-src 'self' blob:", // the hero video is downloaded to memory and played from a blob URL
-  `connect-src 'self'${vercelLive}`,
-  `frame-src https://www.google.com https://maps.google.com${vercelLive}`,
+  `connect-src 'self'${vercelLive}${adConnect}`,
+  `frame-src https://www.google.com https://maps.google.com${vercelLive}${adFrame}`,
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",

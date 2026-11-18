@@ -106,6 +106,16 @@ Running record of what has been done and what is next, so a new Claude Code sess
 - Verified: tsc, eslint and build clean; 38/38 Playwright tests pass (run with a temporary config pointing at the sandbox's Chromium because the pinned Playwright 1.64 wants a newer browser build than the one installed here).
 - Not code, still to do by the owner (this is what AI assistants actually draw on): (1) Google Business Profile: complete every field, same name, address, phones and hours as the site, website = `https://khabirdiag.com`, services listed, real photos, and ask happy customers for Google reviews; (2) Bing Places and Apple Business Connect (ChatGPT/Copilot and Siri use Bing/Apple data), plus Bing Webmaster Tools with the sitemap; (3) the same name/address/phone on Facebook, Instagram, TikTok, X, Pinterest and local Moroccan directories; (4) keep publishing Darija/French articles that answer real questions.
 
+### 2026-11-17 — AdSense readiness, fault-code library, trust pages (branch `feat/adsense-seo-codes`, from main)
+- **Goal from the owner**: stronger branding, more search traffic, and meeting Google AdSense requirements.
+- **Fault-code library** `/[locale]/codes` and `/[locale]/codes/[code]` (fr/ar/en, 40 codes each, 120 pages): `content/codes/meta.ts` (system, severity, official SAE J2012 wording, brands) + hand-written `fr.ts`, `ar.ts` (Darija), `en.ts`. Each page: what it means, symptoms, causes, can I drive (colour-coded), what the workshop measures, related codes, WhatsApp button with the code pre-filled, Article + BreadcrumbList + FAQPage JSON-LD. Search box and system filter on the list. Official wording checked against the MIT `dtc-database` (`D:\dev\khabir-diag-hub\repo\dtc-database`). **Deliberately not the full 12,000 codes**: mass-generated pages count as low-value content and risk AdSense rejection. Covers VW/Audi/Mercedes/BMW/Renault/Dacia/Peugeot by "often seen on" tags, not brand-specific pages.
+- **Trust pages** (AdSense requirement): `/privacy`, `/terms`, `/contact` in 3 languages, linked from the footer with the library; "Codes" added to the top nav (5 links). Privacy page mentions AdSense cookies and Google's opt-out page.
+- **AdSense plumbing, off by default**: `lib/adsense.ts` reads `NEXT_PUBLIC_ADSENSE_CLIENT` / `NEXT_PUBLIC_ADSENSE_SLOT`. Until set: no ad script, no `ins` tags, `/ads.txt` is 404, CSP unchanged. When set: script in `<head>`, `/ads.txt` served from the publisher ID, CSP allows Google ad domains, one responsive unit inside code pages and articles only (never home, services or next to WhatsApp).
+- SEO: sitemap now lists the new pages and all code pages with hreflang; `llms.txt` mentions the library and contact page; back link on inner pages no longer sits on the kicker line.
+- Verified: tsc and eslint clean, webpack build 153 pages, Playwright 60 of 60 (the old nav test now expects 5 links); new `tests/library.spec.ts` (22 tests). Visually checked `/ar/codes/p20ee` and `/en/codes` in the browser pane.
+- **Still to do by the owner** (cannot be done in code): publish more articles (AdSense wants a site that looks maintained; aim for 15-20 pages of real content), wait until the site has some real traffic, apply at adsense.google.com with `khabirdiag.com`, then set the two Vercel variables and redeploy. EEA/UK visitors need a Google-certified consent banner: enable "Privacy & messaging" in the AdSense dashboard when approved. Search Console: resubmit the sitemap (now 160+ URLs), request indexing of `/fr/codes`, `/ar/codes`, `/en/codes`.
+- Not done: nothing committed or pushed on this branch.
+
 ## Next steps (in order)
 
 1. Get from the owner: real workshop photos (about page + hero alternatives).
@@ -121,3 +131,8 @@ Running record of what has been done and what is next, so a new Claude Code sess
 - Query the graph before reading many files: `graphify query "<question>"`, `graphify path "A" "B"`, `graphify explain "X"`.
 - After code changes: `graphify update .` (AST only, no LLM).
 - Append a dated entry to this file at the end of every work session.
+
+### 2026-11-17 (later) — diagnostic steps merged, Next.js 16.4.6
+- Merged the diagnostic steps and per-brand notes (VW/Audi, Mercedes, Renault/Dacia, Peugeot) written by the khabir-diag-hub session for P0087, P0299, P0401, P0420 and P2002 (fr/ar/en) into `content/codes/extra.ts`; code pages show "step by step" and "brand by brand" sections only for codes that have an entry. Our own texts and structure were kept; no workshop cases were added (owner must supply real ones). These notes are not yet reviewed by the workshop team.
+- `next` and `eslint-config-next` pinned to 16.4.6: `next build` started failing its own security check on 16.4.3 (moderate advisory GHSA-mfr8-8qww-v76h). `npm audit --omit=dev`: 0 vulnerabilities.
+- Verified: tsc, build (153 pages), Playwright 61 of 61.

@@ -22,6 +22,8 @@
 - Home: https://khabirdiag.com/en
 - Services: https://khabirdiag.com/en/services
 - About: https://khabirdiag.com/en/about
+- Fault code library (40 codes: meaning, symptoms, causes, can you drive, what we measure; fr/ar/en): https://khabirdiag.com/en/codes
+- Contact and directions: https://khabirdiag.com/en/contact
 - Articles: https://khabirdiag.com/ar/blog
 - Also in French (/fr) and Arabic (/ar)
 
