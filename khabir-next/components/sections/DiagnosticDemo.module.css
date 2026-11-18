@@ -1,5 +1,5 @@
 .lab {
-  background: linear-gradient(180deg, transparent, rgba(22, 33, 38, 0.55) 30%, rgba(22, 33, 38, 0.55) 70%, transparent);
+  background: var(--lab-gradient, transparent);
 }
 
 .grid {
@@ -106,12 +106,14 @@
 
 /* the instrument panel */
 .panel {
-  background: rgba(9, 14, 16, 0.8);
-  border: 1px solid var(--line-strong);
+  background: #0c1317;
+  border: 1px solid rgba(157, 173, 179, 0.22);
   border-radius: 28px;
   padding: 22px 22px 20px;
   font-family: var(--mono);
   font-size: 13.5px;
+  color: #ECF1F2;
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.35);
 }
 
 :lang(ar) .panel {
@@ -122,7 +124,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--text-secondary);
+  color: #9DADB3;
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -147,7 +149,7 @@
   justify-content: space-between;
   gap: 12px;
   padding: 6px 0;
-  color: rgba(236, 241, 242, 0.4);
+  color: rgba(236, 241, 242, 0.65);
   border-bottom: 1px dashed rgba(157, 173, 179, 0.08);
   transition: color 0.35s var(--ease-out);
 }
@@ -160,7 +162,7 @@
 }
 
 .run {
-  color: var(--text-primary) !important;
+  color: #ECF1F2 !important;
 }
 
 .run .state::after {
@@ -169,7 +171,7 @@
 }
 
 .ok {
-  color: var(--text-primary) !important;
+  color: #ECF1F2 !important;
 }
 
 .ok .state {
@@ -221,9 +223,9 @@
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  border: 0;
-  background: var(--panel-2);
-  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #17242a;
+  color: #ECF1F2;
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
@@ -235,7 +237,7 @@
 }
 
 .holdButton:hover {
-  background: #22333a;
+  background: #1f3139;
 }
 
 .pressing {
@@ -256,7 +258,7 @@
 }
 
 .track {
-  stroke: rgba(236, 241, 242, 0.1);
+  stroke: rgba(236, 241, 242, 0.18);
 }
 
 .fill {
@@ -283,10 +285,11 @@
   display: block;
   font-weight: 500;
   font-size: 16px;
+  color: #ECF1F2;
 }
 
 .holdText span {
-  color: var(--text-secondary);
+  color: #9DADB3;
   font-size: 14px;
 }
 

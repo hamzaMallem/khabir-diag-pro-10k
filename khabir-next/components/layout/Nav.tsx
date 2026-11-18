@@ -53,6 +53,56 @@ export function Nav({ locale, ctaLabel, ctaHref, languageLabel, pagesLabel, menu
   const open = openAt === pathname;
   const menuButton = useRef<HTMLButtonElement>(null);
   const sheet = useRef<HTMLDivElement>(null);
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
+
+  useEffect(() => {
+    const active = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+    setTheme(active);
+  }, []);
+
+  const toggleTheme = () => {
+    const next = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    document.documentElement.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem("theme", next);
+    } catch {}
+  };
+
+  const themeToggleLabel =
+    theme === "dark"
+      ? locale === "ar"
+        ? "التبديل إلى الوضع النهاري"
+        : locale === "fr"
+          ? "Passer au mode clair"
+          : "Switch to light mode"
+      : locale === "ar"
+        ? "التبديل إلى الوضع الليلي"
+        : locale === "fr"
+          ? "Passer au mode sombre"
+          : "Switch to dark mode";
+
+  const themeButton = (
+    <button
+      type="button"
+      className={styles.themeToggle}
+      onClick={toggleTheme}
+      aria-label={themeToggleLabel}
+      title={theme === "dark" ? "Mode clair" : "Mode sombre"}
+    >
+      {theme === "dark" ? (
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <circle cx="10" cy="10" r="3.8" />
+          <path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.34 4.34l1.42 1.42M14.24 14.24l1.42 1.42M4.34 15.66l1.42-1.42M14.24 5.76l1.42-1.42" />
+        </svg>
+      ) : (
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+        </svg>
+      )}
+    </button>
+  );
+
 
   useEffect(() => {
     const update = () => setSolid(window.scrollY > 40); // React only re-renders when the value flips
@@ -136,9 +186,9 @@ export function Nav({ locale, ctaLabel, ctaHref, languageLabel, pagesLabel, menu
       <nav className={`${styles.nav} ${solid || open ? styles.solid : ""}`} aria-label="Navigation">
         <Link className={styles.brand} href={`/${locale}`} aria-label="Khabir Diagnostic Auto Pro">
           <svg viewBox="0 0 36 36" aria-hidden="true">
-            <rect x=".75" y=".75" width="34.5" height="34.5" rx="9" fill="#162126" stroke="rgba(157,173,179,.35)" strokeWidth="1.5" />
-            <path d="M12 8v20M12 18l10-10M15.5 15l9 13" stroke="#ECF1F2" strokeWidth="2.8" strokeLinecap="round" fill="none" />
-            <path d="M6 19.5h24" stroke="#FF6B00" strokeWidth="2.2" strokeLinecap="round" />
+            <rect x=".75" y=".75" width="34.5" height="34.5" rx="9" fill="var(--panel)" stroke="var(--line-strong)" strokeWidth="1.5" />
+            <path d="M12 8v20M12 18l10-10M15.5 15l9 13" stroke="var(--text-primary)" strokeWidth="2.8" strokeLinecap="round" fill="none" />
+            <path d="M6 19.5h24" stroke="var(--accent)" strokeWidth="2.2" strokeLinecap="round" />
           </svg>
           <span className={styles.brandText}>
             <span className={styles.brandName}>
@@ -162,6 +212,7 @@ export function Nav({ locale, ctaLabel, ctaHref, languageLabel, pagesLabel, menu
         </ul>
 
         <div className={styles.right}>
+          {themeButton}
           {languageSwitch(styles.langs)}
           <Button href={cta} size="small" className={styles.cta}>
             {ctaLabel}
@@ -192,7 +243,10 @@ export function Nav({ locale, ctaLabel, ctaHref, languageLabel, pagesLabel, menu
             ))}
           </ul>
           <div className={styles.sheetFoot}>
-            {languageSwitch(styles.sheetLangs)}
+            <div className={styles.sheetActions}>
+              {languageSwitch(styles.sheetLangs)}
+              {themeButton}
+            </div>
             <Button href={cta} size="large" whatsapp className={styles.sheetCta}>
               {ctaLabel}
             </Button>

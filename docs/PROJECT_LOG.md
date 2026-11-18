@@ -136,3 +136,13 @@ Running record of what has been done and what is next, so a new Claude Code sess
 - Merged the diagnostic steps and per-brand notes (VW/Audi, Mercedes, Renault/Dacia, Peugeot) written by the khabir-diag-hub session for P0087, P0299, P0401, P0420 and P2002 (fr/ar/en) into `content/codes/extra.ts`; code pages show "step by step" and "brand by brand" sections only for codes that have an entry. Our own texts and structure were kept; no workshop cases were added (owner must supply real ones). These notes are not yet reviewed by the workshop team.
 - `next` and `eslint-config-next` pinned to 16.4.6: `next build` started failing its own security check on 16.4.3 (moderate advisory GHSA-mfr8-8qww-v76h). `npm audit --omit=dev`: 0 vulnerabilities.
 - Verified: tsc, build (153 pages), Playwright 61 of 61.
+
+### 2026-11-18 — Light Mode implementation and contrast polish (Apple-calibre design)
+- **Goal from the owner**: Add light mode / day mode without generic AI-slop, adhering to taste & Apple design guidelines with high contrast under sunlight.
+- **Done in code**:
+  - `styles/globals.css`: Added precision light mode design tokens under `[data-theme="light"]` (`--canvas: #f8fafb`, pure white `--panel`, calibrated `#e65100` high-contrast orange, `--text-primary: #0e1518`, subtle elevation shadows).
+  - `components/layout/Nav.tsx` & `Nav.module.css`: Added Apple-style minimal Sun/Moon theme switcher toggle next to language selector (and in mobile menu sheet) with `localStorage` persistence and automatic `prefers-color-scheme` support. Updated SVG brand logo to adapt theme variables.
+  - `app/[locale]/layout.tsx`: Added pre-hydration inline script to prevent theme flash (zero FOUC) and `suppressHydrationWarning`.
+  - `components/sections/DiagnosticDemo.module.css`: Cleared legacy dark gradient leakage (`.lab`) in light mode; locked diagnostic terminal scanner panel to crisp automotive tablet styling (`#ECF1F2` and `#9DADB3`) with dark brushed tactile start button, resolving contrast issues.
+  - `components/hero/Hero.module.css`: Fixed hero captions to high-contrast white text against the dark cinematic video/poster stage.
+- **Verification**: `tsc --noEmit` clean; `next build` pre-rendered 150+ pages with 0 errors; verified live on `http://localhost:3000/ar` with browser subagent in both light and dark modes.
