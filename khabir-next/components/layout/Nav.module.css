@@ -296,7 +296,8 @@
 
 .sheetLangs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(58px, auto));
+  gap: 2px;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   padding: 4px;
@@ -305,7 +306,9 @@
 .sheetLangs a {
   display: grid;
   place-items: center;
+  min-width: 58px;
   min-height: 48px;
+  padding: 0 14px;
   border-radius: 999px;
   color: var(--text-secondary);
   font-family: var(--body);
@@ -336,6 +339,14 @@
   }
   .right {
     gap: 10px;
+  }
+  /* The theme toggle also lives in the menu sheet; keeping it here made the bar overflow into the logo. */
+  .right > .themeToggle {
+    display: none;
+  }
+  .brandText,
+  .brandName {
+    white-space: nowrap;
   }
   .menuButton {
     display: block;
@@ -368,6 +379,26 @@
 @media (max-width: 380px) {
   .brandArabic {
     display: none;
+  }
+}
+
+/* Smallest phones (320-360px): tighten spacing so logo, button and menu never touch. */
+@media (max-width: 360px) {
+  .nav {
+    gap: 8px;
+  }
+  .brand {
+    gap: 8px;
+  }
+  .brand svg {
+    width: 28px;
+    height: 28px;
+  }
+  .brandName {
+    font-size: 18px;
+  }
+  .right {
+    gap: 6px;
   }
 }
 
