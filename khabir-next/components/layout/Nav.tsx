@@ -53,10 +53,10 @@ export function Nav({ locale, ctaLabel, ctaHref, languageLabel, pagesLabel, menu
   const open = openAt === pathname;
   const menuButton = useRef<HTMLButtonElement>(null);
   const sheet = useRef<HTMLDivElement>(null);
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">("light");
 
   useEffect(() => {
-    const active = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+    const active = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
     setTheme(active);
   }, []);
 
